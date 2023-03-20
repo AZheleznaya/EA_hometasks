@@ -1,0 +1,66 @@
+.flip-card {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card__container {
+    position: relative;
+    height: 450px;
+    max-width: 300px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    perspective: 900px;
+    cursor: pointer;
+}
+
+.flip-card__container:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-card__front,
+.flip-card__back {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-radius: 50px;
+    backface-visibility: hidden;
+}
+
+.flip-card__front {
+    height: 100%;
+    background-image: url("images/AZhel.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-card__back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    background-color: #fe3a3a;
+    color: #ffffff;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flip-card__back_title {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.flip-card__back_description {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
