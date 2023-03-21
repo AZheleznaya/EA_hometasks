@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DELFA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-style: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .table-wrapper {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 30px 30px 40px;
+            background-color: #F0F0F0;
+        }
+
+        .table-wrapper,
+        .email__header,
+        .email__content,
+        .socials,
+        .company-information,
+        .contacts,
+        .email__footer {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .email__header {
+            padding-bottom: 30px;
+        }
+
+        .email__header {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .header-title {
+            text-align: left;
+            color: #4A545E;
+        }
+
+        .header-logo {
+            text-align: center;
+        }
+
+        .header-link {
+            text-align: right;
+            color: #DD1E35;
+        }
+
+        .email__header-mobile {
+            display: none;
+        }
+
+        .content-picture {
+            background-color: #ffffff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content-picture img {
+            width: 100%;
+        }
+
+        .email__content {
+            padding: 30px 30px 40px;
+        }
+
+        .email__container {
+            background-color: #ffffff;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .content-title__name {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 36px;
+            color: #4A545E;
+        }
+
+        .content-description {
+            padding-top: 20px;
+            padding-bottom: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            color: rgba(74, 84, 94, 0.7);
+        }
+
+        .content-link {
+            padding: 16px 0;
+            background: #DD1E35;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .content-link:hover {
+            opacity: 0.9;
+            transition: 0.5s;
+        }
+
+        .content-link__name {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+            color: #FFFFFF;
+        }
+
+        .socials {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .socials__vk {
+            text-align: right;
+        }
+
+        .socials__instagram {
+            width: 54px;
+        }
+
+        .socials__youtube {
+            text-align: left;
+        }
+
+        .socials__vk:hover,
+        .socials__instagram:hover,
+        .socials__youtube:hover {
+            transform: translateY(5px);
+            transition: 0.5s;
+        }
+
+        .company-information {
+            padding: 15px 0 30px;
+            border-spacing: 15px;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+        }
+
+        .company-information__copyright,
+        .company-information__requisites {
+            color: rgba(74, 84, 94, 0.5);
+        }
+
+        .company-information__site {
+            color: #DD1E35;
+        }
+
+        .contacts {
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(74, 84, 94, 0.2);
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #4A545E;
+        }
+
+        .contacts__item {
+            text-align: left;
+        }
+
+        .contacts__item:first-child {
+            text-align: right;
+            padding-right: 30px;
+        }
+
+        .contacts__item-image,
+        .contacts__item-number {
+            vertical-align: middle;
+        }
+
+        .contacts__item-image {
+            padding-right: 10px;
+        }
+
+        .email__footer {
+            padding-top: 30px;
+        }
+
+        .footer-logo__image {
+            width: 48px;
+            height: 40px;
+        }
+
+        .footer-link {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: #DD1E35;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .table-wrapper {
+                max-width: 360px;
+                padding: 30px 15px 40px;
+            }
+
+            .email__header {
+                display: none;
+            }
+
+            .email__header-mobile {
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                padding-bottom: 30px;
+            }
+
+            .email__header-mobile {
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                text-align: center;
+            }
+
+            .header-logo__mobile {
+                padding-bottom: 15px;
+            }
+
+            .header-logo__mobile img {
+                width: 60px;
+                height: 50px;
+            }
+
+            .header-title__mobile {
+                color: #4A545E;
+                padding-bottom: 5px;
+            }
+
+            .header-link__mobile{
+                color: #DD1E35;
+            }
+
+            .email__content {
+                padding: 30px 15px 40px;
+            }
+
+            .content-title__name {
+                font-size: 32px;
+                line-height: 32px;
+            }
+
+            .content-description {
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            .socials {
+                padding-top: 60px;
+            }
+
+            .company-information {
+                padding: 15px 0 44px;
+                border-spacing: 15px;
+            }
+
+            .contacts {
+                padding-bottom: 32px;
+            }
+
+            .contacts__item {
+                display: block;
+                text-align: center;
+            }
+
+            .contacts__item:first-child {
+                text-align: center;
+                padding-right: 0;
+                padding-bottom: 17.5px;
+            }
+
+            .contacts__item-image {
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table class="table-wrapper" cellspacing="0" cellpadding="0" border="0">
+        <thead class="table-header">
+            <tr>
+                <td colspan="3">
+                    <table class="email__header">
+                        <tr>
+                            <td class="header-title">
+                                <h4>Интернет-магазин</h4>
+                            </td>
+                            <td class="header-logo">
+                                <a href="https://shop-delfa.by/" target="_blank" rel="nofollow">
+                                    <img src="images/delfa-logo.png" alt="logo">
+                                </a>
+                            </td>
+                            <td class="header-link">
+                                <a href="https://shop-delfa.by/" target="_blank" rel="nofollow">shop-delfa.by</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="email__header-mobile">
+                        <tr>
+                            <td class="header-logo__mobile">
+                                <a href="https://shop-delfa.by/" target="_blank" rel="nofollow">
+                                    <img src="images/delfa-logo.png" alt="logo">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header-title__mobile">
+                                <h4>Интернет-магазин</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header-link__mobile">
+                                <a href="https://shop-delfa.by/" target="_blank" rel="nofollow">shop-delfa.by</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr>
+                <td class="content-picture" colspan="3">
+                    <img src="images/main.png" alt="mainPicture">
+                </td>
+            </tr>
+            <tr>
+                <td class="email__container" colspan="3">
+                    <table class="email__content">
+                        <tr>
+                            <td class="content-title" colspan="3">
+                                <h1 class="content-title__name">Ткани для штор со склада и на заказ</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="content-description" colspan="3">
+                                <p>6 500 наименований тканей для штор всех мыслимых оттенков и характеристик, оригинальных текстур и плетения, и неизменно высокого качества удовлетворят любые вкусы и желания наших клиентов: от среднебюджетных до абсолютно элитных моделей, от тканей повседневного спроса до тканей экстравагантных, от стиля рококо до «хай тек».
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="content-link" colspan="3">
+                                <a href="http://delfa.by/" class="content-link__name" target="_blank" rel="nofollow">
+                                    Смотреть на сайте
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table class="socials">
+                        <tr>
+                            <td class="socials__vk">
+                                <a href="https://vk.com/" target="_blank" rel="nofollow">
+                                    <img src="images/vk-icon.png" alt="vk-icon">
+                                </a>
+                            </td>
+                            <td class="socials__instagram">
+                                <a href="https://www.instagram.com/delfa_belarus/" target="_blank" rel="nofollow">
+                                    <img src="images/instagram-icon.png" alt="instagram-icon">
+                                </a>
+                            </td>
+                            <td class="socials__youtube">
+                                <a href="https://www.youtube.com/channel/UCPde4pjPB24II8NKRYSRRJQ" target="_blank" rel="nofollow">
+                                    <img src="images/youtube-icon.png" alt="youtube-icon">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table class="company-information">
+                        <tr>
+                            <td class="company-information__copyright">
+                                <p>© Совместное белорусско-германское предприятие "Дельфа" общество с ограниченной ответственностью СП "Дельфа".  Все права защищены
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="company-information__requisites">
+                                <p>УНП 200307272, свидетельство о регистрации выдано Министерством внешних экономических связей Республики Беларусь.
+                                    Регистрация в торговом реестре
+                                    РБ № 357501 от 4 ноября 2016 г.
+                                    Юр. адрес: РБ, Брестская обл., г. Барановичи,
+                                    ул. Репина , д. 67А.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="company-information__site">
+                                <a href="https://shop-delfa.by/" target="_blank" rel="nofollow">www.shop-delfa.by</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table class="contacts">
+                        <tr>
+                            <td class="contacts__item">
+                                <img src="images/a1-logo.png" class="contacts__item-image" alt="a1-logo">
+                                <a href="tel:80445590044" class="contacts__item-number">8 044 559-00-44</a>
+                            </td>
+                            <td class="contacts__item">
+                                <img src="images/mts-logo.png" class="contacts__item-image" alt="mts-logo">
+                                <a href="tel:80298596959" class="contacts__item-number">8 029 859-69-59</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot class="table-footer">
+            <tr>
+                <td colspan="3">
+                    <table class="email__footer">
+                        <tr>
+                            <td class="footer-logo">
+                                <img src="images/delfa-logo.png" class="footer-logo__image" alt="delfa-logo">
+                            </td>
+                            <td class="footer-link">
+                                <a href="http://delfa.by/" target="_blank" rel="nofollow">Отписаться от рассылки</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
