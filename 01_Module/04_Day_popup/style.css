@@ -1,0 +1,134 @@
+@import "fonts/fonts.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nft-wrapper {
+    position: relative;
+    padding: 11vh 27vw;
+    background: #14183D;
+}
+
+.svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.nft-title {
+    position: absolute;
+    left: 46%;
+    right: 1%;
+    font-family: 'Sequel Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.9em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.nft-title:after {
+    position: absolute;
+    content: "";
+    max-width: 120px;
+    width: 100%;
+    height: 2px;
+    top: 32px;
+    left: 10px;
+    background: #A5F659;
+}
+
+.nft-container {
+    position: relative;
+    width: 100%;
+    height: 77.5vh;
+    background: linear-gradient(176.67deg, rgba(21, 25, 62, 0.4) 5.82%, #1D2672 109.53%);
+    background-size: cover;
+    -webkit-clip-path: url(#background);
+    clip-path: url(#background);
+    z-index: 0;
+}
+
+.ntf-container__border {
+    position: absolute;
+    width: 100%;
+    height: 77.5vh;
+    z-index: 2;
+}
+
+.nft-container__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 77.5vh;
+}
+
+.close-cross {
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 93px;
+    margin-top: 40px;
+    width: 51px;
+    height: 51px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.close-cross:hover {
+    border-color: #A5F659;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.cross {
+    width: 18px;
+    height: 18px;
+}
+
+.content-image {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    padding-top: 150px;
+}
+
+.border-qr {
+    position: absolute;
+    content: "";
+    z-index: 2;
+}
+
+.qr-code {
+    position: absolute;
+    content: "";
+    z-index: 2;
+}
+
+.text-qr {
+    position: absolute;
+    content: "";
+    bottom: 130px;
+    font-family: 'Sequel Sans Medium Body', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+}
+
