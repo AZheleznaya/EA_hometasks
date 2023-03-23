@@ -1,0 +1,177 @@
+@import "fonts/fonts.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nft-wrapper {
+    position: relative;
+    padding: 6vh 6.5vw;
+    background: #14183D;
+}
+
+.svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.nft-title {
+    position: absolute;
+    right: 39.7%;
+    top: 9%;
+    font-family: 'Sequel Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.9em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.nft-title:before {
+    position: absolute;
+    content: "";
+    max-width: 120px;
+    width: 100%;
+    height: 2px;
+    top: -16px;
+    left: calc((100% - 120px) / 2);
+    background: #A5F659;
+}
+
+.nft-container {
+    position: relative;
+    width: 100%;
+    height: 88vh;
+    background: linear-gradient(176.67deg, rgba(21, 25, 62, 0.4) 5.82%, #1D2672 109.53%);
+    background-size: cover;
+    -webkit-clip-path: url(#background);
+    clip-path: url(#background);
+    z-index: 0;
+}
+
+.ntf-container__border {
+    position: absolute;
+    width: 100%;
+    height: 88vh;
+    z-index: 2;
+}
+
+.nft-container__content {
+    display: flex;
+    position: relative;
+    height: 88vh;
+}
+
+.content-left {
+    padding: 173px 0 0 91px;
+    max-width: 995px;
+    width: 100%;
+}
+
+.title {
+    font-family: 'Sequel Sans Bold Body', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 118px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.title-part {
+    font-family: 'Sequel Sans Bold Body', sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 124px;
+    line-height: 146px;
+    letter-spacing: 0.02em;
+    color: transparent;
+    -webkit-text-stroke: 2px #FFFFFF;
+}
+
+.title-italic {
+    margin-left: -18px;
+    font-style: italic;
+}
+
+.nft-container__image {
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    z-index: 2;
+}
+
+.content-left__button {
+    padding-top: 56px;
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+
+.button-left {
+    position: relative;
+    max-width: 260px;
+    width: 100%;
+    height: 68px;
+    background: #A5F659;
+    border-radius: 8px;
+    -webkit-clip-path: url(#button-left);
+    clip-path: url(#button-left);
+    font-family: 'Sequel Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #16183D;
+    cursor: pointer;
+    border: none;
+}
+
+.button-left:after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 68px;
+    top: 0;
+    right: -10px;
+    background: #A5F659;
+}
+
+.button-right {
+    position: relative;
+    max-width: 97px;
+    width: 100%;
+    height: 68px;
+    margin-left: -14px;
+    background: transparent;
+    -webkit-clip-path: url(#button-right);
+    clip-path: url(#button-right);
+    cursor: pointer;
+    border: none;
+}
+
+.button-right__border {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    max-width: 97px;
+    width: 100%;
+    height: 68px;
+}
+
+.button-right__arrow {
+    padding-left: 5px;
+    width: 28px;
+    height: 28px;
+}
+
+.content-left__button:hover .button-right {
+    background: #A5F659;
+}
