@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.wrapper {
+    padding: 15.15vh 0;
+    background: #EDEDED;
+}
+
+.container {
+    position: relative;
+    padding: 0 6.25vw;
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+}
+
+.block-right__circle {
+    position: relative;
+    shape-outside: circle(50% at 100% 50%);
+    width: 850px;
+    height: 622px;
+    float: right;
+    opacity: 0;
+    z-index: -1;
+    clip-path: circle(50%);
+}
+
+.list-right {
+    text-align: right;
+}
+
+.list-right__item,
+.list-left__item {
+    padding: 10px 0;
+    width: 840px;
+}
+
+.list-right__item:not(:last-child) {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-left__item {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-right__item .item-link {
+    padding-right: 31px;
+}
+
+.list-left__item .item-link {
+    padding-left: 31px;
+}
+
+.item-link {
+    text-decoration: none;
+    color: #FF1E00;
+    width: 100%;
+}
+
+.list-right__item .item-link__title {
+    padding-right: 21px;
+}
+
+.list-left__item .item-link__title {
+    padding-left: 21px;
+}
+
+.item-link__title {
+    display: inline-block;
+    vertical-align: super;
+    font-family: 'Source Serif Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #03293A;
+}
+
+.item-link__icon {
+    min-width: 26px;
+    width: 26px;
+    min-height: 26px;
+    height: 26px;
+    fill: #FF1E00;
+}
+
+.block-left__circle {
+    position: relative;
+    shape-outside: circle(50% at 0 50%);
+    width: 850px;
+    height: 622px;
+    float: left;
+    opacity: 0;
+    z-index: -1;
+    clip-path: circle(50%);
+}
+
+.circle {
+    position: absolute;
+    background: rgb(250, 250, 250);
+    top: -8.4%;
+    width: 726px;
+    height: 726px;
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.circle-inner {
+    position: absolute;
+    background: #ffffff;
+    top: 7%;
+    left: 7%;
+    width: 622px;
+    height: 622px;
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 0 15px 150px rgba(44, 44, 56, 0.1);
+}
+
+.circle-inner__shadow {
+    position: absolute;
+    background: #ffffff;
+    top: 7%;
+    left: 7%;
+    width: 530px;
+    height: 530px;
+    z-index: 4;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
