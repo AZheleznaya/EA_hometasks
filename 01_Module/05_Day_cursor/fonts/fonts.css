@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexBold.woff2') format('woff2'),
+    url('./RexBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex Bold Inline';
+    src: url('./RexBoldInline.woff2') format('woff2'),
+    url('./RexBoldInline.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexBold.woff2') format('woff2'),
+    url('./RexBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexLight.woff2') format('woff2'),
+    url('./RexLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex Bold Inline';
+    src: url('./RexBoldInline.woff2') format('woff2'),
+    url('./RexBoldInline.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexBold.woff2') format('woff2'),
+    url('./RexBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexLight.woff2') format('woff2'),
+    url('./RexLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex Bold Inline';
+    src: url('./RexBoldInline.woff2') format('woff2'),
+    url('./RexBoldInline.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rex';
+    src: url('./RexLight.woff2') format('woff2'),
+    url('./RexLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
