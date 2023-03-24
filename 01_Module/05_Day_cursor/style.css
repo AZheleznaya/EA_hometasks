@@ -1,0 +1,382 @@
+@import "fonts/fonts.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.cursor-round {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #FE3A3A;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.5s ease;
+    transition-property: background, width, height;
+    z-index: 2;
+}
+
+.cursor__list-top {
+    width: 100px;
+    height: 100px;
+}
+
+.cursor__list-middle {
+    width: 120px;
+    height: 120px;
+}
+
+.cursor__arrow {
+    width: 72px;
+    height: 72px;
+}
+
+.cursor__hero-block {
+    width: 100px;
+    height: 100px;
+    background-color: #FE3A3A;
+}
+
+.cursor__hero-block:after {
+    position: absolute;
+    content: "view";
+    top: 44%;
+    right: 36%;
+    width: 31px;
+    height: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cursor__project-text,
+.cursor__weapons {
+    width: 100px;
+    height: 100px;
+    background-color: #FE3A3A;
+}
+
+.cursor__project-text:after,
+.cursor__weapons:after {
+    position: absolute;
+    content: "View project";
+    top: 43%;
+    left: 10px;
+    width: 78px;
+    height: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.cursor__information-title {
+    width: 100px;
+    height: 100px;
+    background-color: #FE3A3A;
+}
+
+.cursor__information-title:after {
+    position: absolute;
+    content: "Contact us";
+    top: 43%;
+    left: 15px;
+    width: 68px;
+    height: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wrapper {
+    padding: 6.9vh 2.4vw 4.4vh;
+    display: flex;
+    justify-content: flex-start;
+    gap: 139px;
+    background: #040504;
+}
+
+.left-block {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left-block__top {
+    display: flex;
+    justify-content: flex-start;
+    gap: 85px;
+    max-width: 724px;
+    width: 100%;
+}
+
+.hero-block {
+    position: relative;
+    max-width: 331px;
+    width: 100%;
+    background: #151715;
+}
+
+.hero-block:hover {
+    border-radius: 50%;
+}
+
+.hero-block__image {
+    width: 331px;
+    height: 331px;
+    background: transparent;
+}
+
+.hero-block:hover .hero-block__image {
+    border-radius: 50%;
+}
+
+.hero-block__name {
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    right: 32%;
+    font-family: 'Rex', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+}
+
+.hero-block:hover .hero-block__name {
+    color: #FE3A3A;
+}
+
+.project-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nav-block {
+    padding-bottom: 115px;
+}
+
+.list-top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.list-top__item {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ABACAB;
+}
+
+.list-top__item:hover {
+    color: #FFFFFF;
+}
+
+.list-top__item:not(:last-child) {
+    margin-right: 60px;
+}
+
+.project-description {
+    text-align: center;
+}
+
+.project-description__title {
+    padding-bottom: 12px;
+    font-family: 'Rex', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+}
+
+.project-description__link {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FE3A3A;
+}
+
+.left-block__middle {
+    padding: 161.58px 0 156px;
+}
+
+.list-middle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-middle__item {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #ABACAB;
+}
+
+.list-middle__item:hover {
+    color: #FFFFFF;
+}
+
+.list-middle__item.active {
+    color: #FFFFFF;
+}
+
+.list-middle__item.active:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: -15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FE3A3A;
+}
+
+.list-middle__item:not(:last-child) {
+    margin-right: 92px;
+}
+
+.left-block__bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 454px;
+    width: 100%;
+}
+
+.nav-bottom__item {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-item__next,
+.bottom-item__back {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.bottom-item__next {
+    color: #FFFFFF;
+    padding-right: 56px;
+}
+
+.bottom-item__back {
+    color: #ABACAB;
+    padding-right: 42px;
+}
+
+.nav-bottom__icon-back {
+    transform: rotate(270deg);
+}
+
+.right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.right-block__information {
+    padding-bottom: 105px;
+}
+
+.information__title {
+    padding-bottom: 20px;
+    font-family: 'Rex', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 100px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+    text-shadow: 0 4px 44px rgba(4, 5, 4, 0.8);
+}
+
+.information__subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #FE3A3A;
+}
+
+.right-block__weapons {
+    position: relative;
+    max-width: 544px;
+    width: 100%;
+}
+
+.right-block__weapons:hover .weapons-image {
+    transform: scale(1.2);
+}
+
+.weapons-link {
+    position: absolute;
+    content: "";
+    top: 40%;
+    right: 36%;
+    font-family: 'Rex', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+}
