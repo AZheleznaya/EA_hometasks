@@ -4506,59 +4506,59 @@ html {
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-BoldItalic.woff2") format("woff2"), url("../assets/fonts/Geometria-BoldItalic.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-BoldItalic.woff2") format("woff2"), url("../../assets/fonts/Geometria-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-Bold.woff2") format("woff2"), url("../assets/fonts/Geometria-Bold.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-Bold.woff2") format("woff2"), url("../../assets/fonts/Geometria-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-ExtraBold.woff2") format("woff2"), url("../assets/fonts/Geometria-ExtraBold.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-ExtraBold.woff2") format("woff2"), url("../../assets/fonts/Geometria-ExtraBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-MediumItalic.woff2") format("woff2"), url("../assets/fonts/Geometria-MediumItalic.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-MediumItalic.woff2") format("woff2"), url("../../assets/fonts/Geometria-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-LightItalic.woff2") format("woff2"), url("../assets/fonts/Geometria-LightItalic.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-LightItalic.woff2") format("woff2"), url("../../assets/fonts/Geometria-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-Medium.woff2") format("woff2"), url("../assets/fonts/Geometria-Medium.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-Medium.woff2") format("woff2"), url("../../assets/fonts/Geometria-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Geometria";
-  src: url("../assets/fonts/Geometria-Light.woff2") format("woff2"), url("../assets/fonts/Geometria-Light.woff") format("woff");
+  src: url("../../assets/fonts/Geometria-Light.woff2") format("woff2"), url("../../assets/fonts/Geometria-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 body {
-  background: #C9AB63;
   width: 100%;
+  min-width: 320px;
+  background: #F5F5F5;
 }
 body .content-main {
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4566,9 +4566,8 @@ body .content-main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  max-width: 1920px;
+  width: 100%;
   min-height: 100vh;
-  background: #F5F5F5;
 }
 @media (max-width: 1440px) {
   body .content-main {
@@ -4878,9 +4877,9 @@ body .content-main .main .section__services .services__tab {
 body .content-main .main .section__services .services__tab .tabs {
   max-width: 100%;
   height: 26px;
-  overflow: hidden;
   text-align: center;
   line-height: 0;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
   body .content-main .main .section__services .services__tab .tabs {
@@ -4889,17 +4888,26 @@ body .content-main .main .section__services .services__tab .tabs {
 }
 body .content-main .main .section__services .services__tab .tabs .nav {
   position: relative;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
+  margin: 0 auto -32px;
+  padding: 0 0 42px;
+  max-width: 100%;
   list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-align: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+@media (max-width: 1024px) {
+  body .content-main .main .section__services .services__tab .tabs .nav {
+    margin: 0 auto -24px;
+  }
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__services .services__tab .tabs .nav {
+    margin: 0 auto -20px;
+  }
 }
 body .content-main .main .section__services .services__tab .tabs .nav .nav-item {
   display: block;
@@ -4954,7 +4962,6 @@ body .content-main .main .section__services .tab-content .row {
   margin: 0;
 }
 body .content-main .main .section__services .tab-content .row .tab__name {
-  margin: 0;
   padding: 20px 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4967,6 +4974,7 @@ body .content-main .main .section__services .tab-content .row .tab__name {
           justify-content: start;
   max-width: 100%;
   min-height: 128px;
+  height: 100%;
   font-family: "Geometria", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -4992,7 +5000,8 @@ body .content-main .main .section__services .tab-content .row .tab__name {
   }
 }
 body .content-main .main .section__services .tab-content .row .col-6, body .content-main .main .section__services .tab-content .row .col-md-4, body .content-main .main .section__services .tab-content .row .col-lg-6, body .content-main .main .section__services .tab-content .row .col-xl-4 {
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 body .content-main .main .section__surgeons {
   padding: 62px 0;
@@ -5087,6 +5096,7 @@ body .content-main .main .section__surgeons .surgeons .col-12 .surgeon__image, b
   max-width: 343px;
   width: 100%;
   min-height: 520px;
+  height: 100%;
   border-bottom: 4px solid #C9AB63;
   overflow: hidden;
 }
@@ -5156,6 +5166,149 @@ body .content-main .main .section__surgeons .surgeons .button__link {
 }
 @media (max-width: 767px) {
   body .content-main .main .section__surgeons .surgeons .button__link {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+body .content-main .main .section__lorem {
+  padding: 72px 0 136px;
+}
+@media (max-width: 1024px) {
+  body .content-main .main .section__lorem {
+    padding: 24px 0 0;
+  }
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__lorem {
+    padding: 0 0 80px;
+  }
+}
+@media (max-width: 1024px) {
+  body .content-main .main .section__lorem .row-lorem {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+body .content-main .main .section__lorem .lorem__image {
+  margin-right: 35px;
+  max-width: 680px;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 1279px) {
+  body .content-main .main .section__lorem .lorem__image {
+    margin-right: 0;
+    margin-top: 32px;
+  }
+}
+@media (max-width: 1024px) {
+  body .content-main .main .section__lorem .lorem__image {
+    max-width: 687px;
+    min-height: 320px;
+  }
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__lorem .lorem__image {
+    min-width: 318px;
+    max-height: 240px;
+  }
+}
+body .content-main .main .section__lorem .lorem__image img {
+  width: 100%;
+  height: 100%;
+}
+body .content-main .main .section__lorem .lorem__paragraph {
+  position: relative;
+  padding-left: 24px;
+}
+body .content-main .main .section__lorem .lorem__paragraph:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: #C9AB63;
+}
+body .content-main .main .section__lorem .lorem__paragraph .paragraph__title {
+  padding-bottom: 32px;
+  font-family: "Geometria", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #0F0F28;
+}
+@media (max-width: 1279px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__title {
+    padding-bottom: 24px;
+    font-size: 44px;
+    line-height: 44px;
+  }
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__title {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+body .content-main .main .section__lorem .lorem__paragraph .paragraph__description {
+  font-family: "Geometria", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #0F0F28;
+  opacity: 0.6;
+}
+@media (max-width: 1279px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__description {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+body .content-main .main .section__lorem .lorem__paragraph .collapse:not(.show) {
+  display: none;
+}
+body .content-main .main .section__lorem .lorem__paragraph .paragraph__button {
+  margin-top: 44px;
+  display: block;
+  padding: 26px 30px 22px;
+  border: none;
+  background: #C9AB63;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media (max-width: 1279px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button {
+    margin-top: 24px;
+    padding: 18px 30px 14px;
+  }
+}
+body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:hover {
+  opacity: 0.8;
+}
+body .content-main .main .section__lorem .lorem__paragraph .paragraph__button-link {
+  font-family: "Geometria", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button-link {
     font-size: 14px;
     line-height: 14px;
   }

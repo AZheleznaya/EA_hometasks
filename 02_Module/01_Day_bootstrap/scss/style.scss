@@ -1,19 +1,18 @@
-@import "reboot.scss";
-@import "grid.scss";
-@import "fonts.scss";
+@import "_bootstrap/reboot.scss";
+@import "_bootstrap/grid.scss";
+@import "fonts/fonts.scss";
 @import "variables.scss";
 
 body {
-  background: #C9AB63;
   width: 100%;
+  min-width: 320px;
+  background: #F5F5F5;
 
   .content-main {
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    max-width: 1920px;
+    width: 100%;
     min-height: 100vh;
-    background: #F5F5F5;
 
     @media (max-width: 1440px) {
       flex-direction: column;
@@ -298,7 +297,6 @@ body {
           .tabs {
             max-width: 100%;
             height: 26px;
-            overflow: hidden;
             text-align: center;
             line-height: 0;
             cursor: pointer;
@@ -309,14 +307,22 @@ body {
 
             .nav {
               position: relative;
-              display: -ms-flexbox;
-              display: flex;
-              justify-content: center;
-              -ms-flex-wrap: wrap;
-              flex-wrap: wrap;
-              padding-left: 0;
-              margin-bottom: 0;
+              margin: 0 auto -32px;
+              padding: 0 0 42px;
+              max-width: 100%;
               list-style: none;
+              display: inline-flex;
+              text-align: center;
+              overflow-x: scroll;
+              overflow-y: hidden;
+
+              @media (max-width: 1024px) {
+                margin: 0 auto -24px;
+              }
+
+              @media (max-width: 767px) {
+                margin: 0 auto -20px;
+              }
 
               .nav-item {
                 display: block;
@@ -374,13 +380,13 @@ body {
             margin: 0;
 
             .tab__name {
-              margin: 0;
               padding: 20px 24px;
               display: flex;
               align-items: center;
               justify-content: start;
               max-width: 100%;
               min-height: 128px;
+              height: 100%;
               font-family: 'Geometria', sans-serif;
               font-style: normal;
               font-weight: 700;
@@ -405,7 +411,8 @@ body {
             }
 
             .col-6, .col-md-4, .col-lg-6, .col-xl-4 {
-              padding: 0;
+              padding-left: 0;
+              padding-right: 0;
             }
           }
         }
@@ -499,6 +506,7 @@ body {
               max-width: 343px;
               width: 100%;
               min-height: 520px;
+              height: 100%;
               border-bottom: 4px solid #C9AB63;
               overflow: hidden;
 
@@ -574,6 +582,148 @@ body {
           }
         }
       }
+
+      .section__lorem {
+        padding: 72px 0 136px;
+
+        @media (max-width: 1024px) {
+          padding: 24px 0 0;
+        }
+
+        @media (max-width: 767px) {
+          padding: 0 0 80px;
+        }
+
+        .row-lorem {
+          @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+          }
+        }
+
+        .lorem__image {
+          margin-right: 35px;
+          max-width: 680px;
+          width: 100%;
+          overflow: hidden;
+
+          @media (max-width: 1279px) {
+            margin-right: 0;
+            margin-top: 32px;
+          }
+
+          @media (max-width: 1024px) {
+            max-width: 687px;
+            min-height: 320px;
+          }
+          
+          @media (max-width: 767px) {
+            min-width: 318px;
+            max-height: 240px;
+          }
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .lorem__paragraph {
+          position: relative;
+          padding-left: 24px;
+
+          &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: #C9AB63;
+          }
+
+          .paragraph__title {
+            padding-bottom: 32px;
+            font-family: 'Geometria', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 50px;
+            text-transform: uppercase;
+            color: #0F0F28;
+
+            @media (max-width: 1279px) {
+              padding-bottom: 24px;
+              font-size: 44px;
+              line-height: 44px;
+            }
+
+            @media (max-width: 767px) {
+              font-size: 32px;
+              line-height: 32px;
+            }
+          }
+
+          .paragraph__description {
+            font-family: 'Geometria', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            color: #0F0F28;
+            opacity: 0.6;
+
+            @media (max-width: 1279px) {
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+
+          .collapse:not(.show) {
+            display: none;
+          }
+
+          .paragraph__button {
+            margin-top: 44px;
+            display: block;
+            padding: 26px 30px 22px;
+            border: none;
+            background: #C9AB63;
+            transition: all 0.3s ease;
+
+            @media (max-width: 1279px) {
+              margin-top: 32px;
+            }
+
+            @media (max-width: 767px) {
+              margin-top: 24px;
+              padding: 18px 30px 14px;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &-link {
+              font-family: 'Geometria', sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 16px;
+              text-align: center;
+              text-transform: uppercase;
+              color: #FFFFFF;
+              text-decoration: none;
+
+              @media (max-width: 767px) {
+                font-size: 14px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+      }
+
+
     }
   }
 }
