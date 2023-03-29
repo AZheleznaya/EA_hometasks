@@ -4569,10 +4569,7 @@ body a:active {
   text-decoration: none;
 }
 body .preloader {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  background-color: #0F0F28;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4582,8 +4579,10 @@ body .preloader {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #0F0F28;
 }
 body .preloader__circle {
   width: 16vmax;

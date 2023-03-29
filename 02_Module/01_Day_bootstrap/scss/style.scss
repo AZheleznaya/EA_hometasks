@@ -21,14 +21,14 @@ body {
   }
 
   .preloader {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: #0F0F28;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #0F0F28;
 
     &__circle {
       width: 16vmax;
