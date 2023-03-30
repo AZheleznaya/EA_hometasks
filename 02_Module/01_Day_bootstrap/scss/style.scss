@@ -1,3 +1,4 @@
+@import "_bootstrap/modal.scss";
 @import "_bootstrap/reboot.scss";
 @import "_bootstrap/grid.scss";
 @import "fonts/fonts.scss";
@@ -7,7 +8,12 @@
 body {
   width: 100%;
   min-width: 320px;
+  display: flex;
   background: #F5F5F5;
+
+  @media (max-width: 1440px) {
+    flex-direction: column;
+  }
 
   *:focus {
     outline-style: none;
@@ -78,279 +84,59 @@ body {
     }
   }
 
-  .content-main {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    @include min-height;
-    overflow: hidden;
+  .header {
+    min-width: 296px;
+    width: 296px;
+    background-color: #0F0F28;
 
     @media (max-width: 1440px) {
-      flex-direction: column;
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      top: 0;
+      left: 0;
+      min-height: 100px;
+      min-width: 100%;
+      width: 100%;
+      z-index: 3;
     }
 
-    .header {
+    @media (max-width: 767px) {
+      min-height: 80px;
+    }
+
+    .header__desktop {
+      position: fixed;
+      padding: 58px 18px 37px;
+      @include height-100vh;
       min-width: 296px;
       width: 296px;
-      background-color: #0F0F28;
 
-        @media (max-width: 1440px) {
-          position: fixed;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-          top: 0;
-          left: 0;
-          min-height: 100px;
-          min-width: 100%;
-          width: 100%;
-          z-index: 3;
-        }
-
-        @media (max-width: 767px) {
-          min-height: 80px;
-        }
-
-      .header__desktop {
-        position: fixed;
-        padding: 58px 18px 37px;
-        @include height-100vh;
-        min-width: 296px;
-        width: 296px;
-        
-        @media (max-width: 1440px) {
-          left: -296px;
-        }
-
-        &.active {
-          top: 0;
-          left: 0;
-          background-color: #0F0F28;
-          z-index: 10;
-          transition: all 0.5s ease;
-        }
-
-        &-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-start;
-          height: 100%;
-
-          .header-logo {
-            .logo {
-              width: 260px;
-
-              &__image {
-                width: auto;
-                height: auto;
-                max-width: 100%;
-                transition: all 0.5s ease;
-
-                @media(pointer: coarse) {
-                  &:active {
-                    transform: scale(0.9);
-                    transition: all 0.1s ease;
-                  }
-                }
-
-                @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-                  &:hover,
-                  &:focus {
-                    transform: scale(0.9);
-                    transition: all 0.5s ease;
-                  }
-                }
-              }
-            }
-          }
-
-          .header-menu {
-            .menu {
-              margin-top: 0;
-              margin-bottom: 0;
-              padding-left: 38px;
-              list-style-type: none;
-
-              &__item {
-                &:not(:last-child) {
-                  padding-bottom: 16px;
-                }
-
-                &-link {
-                  font-family: 'Geometria', sans-serif;
-                  font-style: normal;
-                  font-weight: 500;
-                  font-size: 20px;
-                  line-height: 20px;
-                  color: #FFFFFF;
-
-                  @media(pointer: coarse) {
-                    &:active {
-                      color: #C9AB63;
-                      transition: all 0.1s ease;
-                    }
-                  }
-
-                  @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-                    &:hover,
-                    &:focus {
-                      color: #C9AB63;
-                      transition: all 0.3s ease;
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          .header-button {
-            padding-left: 38px;
-
-            &__phone {
-              padding: 18px 31px;
-              font-family: 'Geometria', sans-serif;
-              font-style: normal;
-              font-weight: 700;
-              font-size: 16px;
-              line-height: 16px;
-              text-align: center;
-              text-transform: uppercase;
-              color: #FFFFFF;
-              border: 2px solid #C9AB63;
-              transition: all 0.5s ease;
-
-              @media(pointer: coarse) {
-                &:active {
-                  background: #C9AB63;
-                  transition: all 0.1s ease;
-                }
-              }
-
-              @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-                &:hover,
-                &:focus {
-                  background: #C9AB63;
-                  transition: all 0.5s ease;
-                }
-              }
-            }
-          }
-        }
+      @media (max-width: 1440px) {
+        left: -296px;
       }
 
-      .header__close {
-        visibility: hidden;
-
-        &.active {
-          visibility: visible;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 9;
-          padding-top: 12px;
-          padding-right: 12px;
-          min-width: 360px;
-          @include height-100vh;
-          background: rgba(15, 15, 40, 0.8);
-          backdrop-filter: blur(4px);
-
-          .header__close-icon {
-            position: absolute;
-            display: block;
-            padding-bottom: 5px;
-            top: 12px;
-            right: 12px;
-            width: 36px;
-            height: 36px;
-            background: inherit;
-            border: 2px solid #C9AB63;
-            outline: none;
-            text-align: center;
-            z-index: 10;
-            transition: all 0.5s ease;
-
-            @media(pointer: coarse) {
-              &:active {
-                transform: scale(0.9);
-                transition: all 0.1s ease;
-              }
-            }
-
-            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-              &:hover,
-              &:focus {
-                transform: scale(0.9);
-                transition: all 0.5s ease;
-              }
-            }
-          }
-        }
+      &.active {
+        top: 0;
+        left: 0;
+        background-color: #0F0F28;
+        z-index: 10;
+        transition: all 0.5s ease;
       }
 
-      .header__mobile {
-        visibility: hidden;
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
 
-        @media (max-width: 1440px) {
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: 4;
-          @include width-100vw;
-          min-width: 360px;
-          visibility: visible;
-        }
+        .header-logo {
+          .logo {
+            width: 260px;
 
-        &-content {
-          padding: 12px 40px 13px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          @media (max-width: 767px) {
-            padding: 18px 20px;
-          }
-
-          .mobile-menu {
-            width: 45px;
-            height: 30px;
-            background: #0F0F28;
-            transition: all 0.5s ease;
-            outline: none;
-            border: none;
-
-            @media (max-width: 767px) {
-              width: 40px;
-              height: 28px;
-            }
-
-            @media(pointer: coarse) {
-              &:active {
-                transform: scale(1.1);
-                transition: all 0.1s ease;
-              }
-            }
-
-            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-              &:hover,
-              &:focus {
-                transform: scale(1.1);
-                transition: all 0.5s ease;
-              }
-            }
-          }
-
-          .mobile-logo {
-            width: 190px;
-
-            @media (max-width: 767px) {
-              width: 110px;
-            }
-
-            .logo__image {
+            &__image {
               width: auto;
               height: auto;
               max-width: 100%;
@@ -372,62 +158,282 @@ body {
               }
             }
           }
+        }
 
-          .mobile-button {
-            @media (max-width: 767px) {
-              display: block;
-              width: 36px;
-              height: 36px;
-              border: 2px solid #C9AB63;
-            }
+        .header-menu {
+          .menu {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 38px;
+            list-style-type: none;
 
-            &__phone {
-              padding: 18px 31px;
-              font-family: 'Geometria', sans-serif;
-              font-style: normal;
-              font-weight: 700;
-              font-size: 16px;
-              line-height: 16px;
-              text-align: center;
-              text-transform: uppercase;
-              color: #FFFFFF;
-              border: 2px solid #C9AB63;
-              transition: all 0.5s ease;
-
-              @media (max-width: 767px) {
-                display: none;
+            &__item {
+              &:not(:last-child) {
+                padding-bottom: 16px;
               }
 
-              @media(pointer: coarse) {
-                &:active {
-                  background: #C9AB63;
-                  transition: all 0.1s ease;
+              &-link {
+                font-family: 'Geometria', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 20px;
+                color: #FFFFFF;
+
+                @media(pointer: coarse) {
+                  &:active {
+                    color: #C9AB63;
+                    transition: all 0.1s ease;
+                  }
                 }
-              }
 
-              @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
-                &:hover,
-                &:focus {
-                  background: #C9AB63;
-                  transition: all 0.5s ease;
+                @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                  &:hover,
+                  &:focus {
+                    color: #C9AB63;
+                    transition: all 0.3s ease;
+                  }
                 }
               }
             }
+          }
+        }
 
-            &__icon {
-              display: none;
+        .header-button {
+          padding-left: 38px;
 
-              @media (max-width: 767px) {
-                display: block;
-                padding-top: 2px;
-                width: 100%;
-                height: 100%;
-                text-align: center;
+          &__phone {
+            padding: 18px 31px;
+            font-family: 'Geometria', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            border: 2px solid #C9AB63;
+            transition: all 0.5s ease;
+
+            @media(pointer: coarse) {
+              &:active {
+                background: #C9AB63;
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                background: #C9AB63;
+                transition: all 0.5s ease;
               }
             }
           }
         }
       }
+    }
+
+    .header__close {
+      visibility: hidden;
+
+      &.active {
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+        padding-top: 12px;
+        padding-right: 12px;
+        min-width: 360px;
+        @include height-100vh;
+        background: rgba(15, 15, 40, 0.8);
+        backdrop-filter: blur(4px);
+
+        .header__close-icon {
+          position: absolute;
+          display: block;
+          padding-bottom: 5px;
+          top: 12px;
+          right: 12px;
+          width: 36px;
+          height: 36px;
+          background: inherit;
+          border: 2px solid #C9AB63;
+          outline: none;
+          text-align: center;
+          z-index: 10;
+          transition: all 0.5s ease;
+
+          @media(pointer: coarse) {
+            &:active {
+              transform: scale(0.9);
+              transition: all 0.1s ease;
+            }
+          }
+
+          @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+            &:hover,
+            &:focus {
+              transform: scale(0.9);
+              transition: all 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+
+    .header__mobile {
+      visibility: hidden;
+
+      @media (max-width: 1440px) {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        @include width-100vw;
+        min-width: 360px;
+        visibility: visible;
+      }
+
+      &-content {
+        padding: 12px 40px 13px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 767px) {
+          padding: 18px 20px;
+        }
+
+        .mobile-menu {
+          width: 45px;
+          height: 30px;
+          background: #0F0F28;
+          transition: all 0.5s ease;
+          outline: none;
+          border: none;
+
+          @media (max-width: 767px) {
+            width: 40px;
+            height: 28px;
+          }
+
+          @media(pointer: coarse) {
+            &:active {
+              transform: scale(1.1);
+              transition: all 0.1s ease;
+            }
+          }
+
+          @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+            &:hover,
+            &:focus {
+              transform: scale(1.1);
+              transition: all 0.5s ease;
+            }
+          }
+        }
+
+        .mobile-logo {
+          width: 190px;
+
+          @media (max-width: 767px) {
+            width: 110px;
+          }
+
+          .logo__image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            transition: all 0.5s ease;
+
+            @media(pointer: coarse) {
+              &:active {
+                transform: scale(0.9);
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                transform: scale(0.9);
+                transition: all 0.5s ease;
+              }
+            }
+          }
+        }
+
+        .mobile-button {
+          @media (max-width: 767px) {
+            display: block;
+            width: 36px;
+            height: 36px;
+            border: 2px solid #C9AB63;
+          }
+
+          &__phone {
+            padding: 18px 31px;
+            font-family: 'Geometria', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            border: 2px solid #C9AB63;
+            transition: all 0.5s ease;
+
+            @media (max-width: 767px) {
+              display: none;
+            }
+
+            @media(pointer: coarse) {
+              &:active {
+                background: #C9AB63;
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                background: #C9AB63;
+                transition: all 0.5s ease;
+              }
+            }
+          }
+
+          &__icon {
+            display: none;
+
+            @media (max-width: 767px) {
+              display: block;
+              padding-top: 2px;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include min-height;
+    overflow: hidden;
+
+    @media (max-width: 1440px) {
+      flex-direction: column;
     }
 
     .main {
@@ -445,17 +451,8 @@ body {
         background: url("./assets/images/hero.png") center / cover no-repeat;
         overflow: hidden;
 
-        @media (max-width: 1440px) {
-          margin-top: 100px;
-        }
-
         @media (max-width: 1024px) {
           margin-left: 0;
-        }
-
-        @media (max-width: 767px) {
-          margin-left: 0;
-          margin-top: 80px;
         }
 
         &::after {
