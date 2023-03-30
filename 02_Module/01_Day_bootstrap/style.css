@@ -4733,17 +4733,29 @@ body .content-main .header__logo img {
   width: auto;
   height: auto;
   max-width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 @media (max-width: 1440px) {
   body .content-main .header__logo img {
     position: relative;
   }
 }
-body .content-main .header__logo img:hover, body .content-main .header__logo img:focus {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+@media (pointer: coarse) {
+  body .content-main .header__logo img:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .header__logo img:hover, body .content-main .header__logo img:focus {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main {
   width: 100%;
@@ -5092,6 +5104,8 @@ body .content-main .main .section__services .services__tab .tabs .nav .nav-item 
   line-height: 16px;
   color: #0F0F28;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 @media (max-width: 1024px) {
   body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link {
@@ -5102,10 +5116,21 @@ body .content-main .main .section__services .services__tab .tabs .nav .nav-item 
   color: #C9AB63;
   border-bottom-color: #C9AB63;
 }
-body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link:hover,
-body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link:focus {
-  color: #E9DDC1;
-  border-bottom: 2px solid #E9DDC1;
+@media (pointer: coarse) {
+  body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link:active {
+    color: #E9DDC1;
+    border-bottom: 2px solid #E9DDC1;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link:hover, body .content-main .main .section__services .services__tab .tabs .nav .nav-item .nav-link:focus {
+    color: #E9DDC1;
+    border-bottom: 2px solid #E9DDC1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
 }
 body .content-main .main .section__services .tab-content {
   margin-top: 32px;
@@ -5358,8 +5383,8 @@ body .content-main .main .section__surgeons .surgeons .button {
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   -webkit-box-shadow: inset 0 0 0 0 transparent;
           box-shadow: inset 0 0 0 0 transparent;
 }
@@ -5376,15 +5401,32 @@ body .content-main .main .section__surgeons .surgeons .button {
     line-height: 14px;
   }
 }
-body .content-main .main .section__surgeons .surgeons .button:hover {
-  background: #FFFFFF;
-  color: #C9AB63;
-  border: 2px solid #C9AB63;
-  -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
-          box-shadow: inset 0 0 0 50px #FFFFFF;
+@media (pointer: coarse) {
+  body .content-main .main .section__surgeons .surgeons .button:active {
+    background: #FFFFFF;
+    color: #C9AB63;
+    border: 2px solid #C9AB63;
+    -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
+            box-shadow: inset 0 0 0 50px #FFFFFF;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
 }
-body .content-main .main .section__surgeons .surgeons .button:focus {
-  background: #E9DDC1;
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__surgeons .surgeons .button:hover {
+    background: #FFFFFF;
+    color: #C9AB63;
+    border: 2px solid #C9AB63;
+    -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
+            box-shadow: inset 0 0 0 50px #FFFFFF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  body .content-main .main .section__surgeons .surgeons .button:focus {
+    background: #E9DDC1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main .section__lorem {
   padding: 72px 0 136px;
@@ -5506,11 +5548,22 @@ body .content-main .main .section__lorem .lorem__paragraph .paragraph__descripti
   background-position: 0 100%;
   background-size: 0 2px, 100% 2px;
   background-repeat: no-repeat;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-body .content-main .main .section__lorem .lorem__paragraph .paragraph__description .very-long-link:hover, body .content-main .main .section__lorem .lorem__paragraph .paragraph__description .very-long-link:focus {
-  background-size: 100% 2px, 0 2px;
+@media (pointer: coarse) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__description .very-long-link:active {
+    background-size: 100% 2px, 0 2px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+}
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__description .very-long-link:hover, body .content-main .main .section__lorem .lorem__paragraph .paragraph__description .very-long-link:focus {
+    background-size: 100% 2px, 0 2px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main .section__lorem .lorem__paragraph .collapse:not(.show) {
   display: none;
@@ -5529,8 +5582,8 @@ body .content-main .main .section__lorem .lorem__paragraph .paragraph__button {
   color: #FFFFFF;
   border: 2px solid transparent;
   background: #C9AB63;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   -webkit-box-shadow: inset 0 0 0 50px transparent;
           box-shadow: inset 0 0 0 50px transparent;
 }
@@ -5547,15 +5600,32 @@ body .content-main .main .section__lorem .lorem__paragraph .paragraph__button {
     line-height: 14px;
   }
 }
-body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:hover {
-  background: #FFFFFF;
-  color: #C9AB63;
-  border: 2px solid #C9AB63;
-  -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
-          box-shadow: inset 0 0 0 50px #FFFFFF;
+@media (pointer: coarse) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:active {
+    color: #C9AB63;
+    background: #FFFFFF;
+    -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
+            box-shadow: inset 0 0 0 50px #FFFFFF;
+    border: 2px solid #C9AB63;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
 }
-body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:focus {
-  background: #E9DDC1;
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:hover {
+    color: #C9AB63;
+    background: #FFFFFF;
+    -webkit-box-shadow: inset 0 0 0 50px #FFFFFF;
+            box-shadow: inset 0 0 0 50px #FFFFFF;
+    border: 2px solid #C9AB63;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  body .content-main .main .section__lorem .lorem__paragraph .paragraph__button:focus {
+    background: #E9DDC1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main .section__faq {
   padding: 0 0 80px;
@@ -5648,6 +5718,8 @@ body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs_
   color: #0F0F28;
   border: 1px solid #E7E7E9;
   z-index: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active::before {
   position: absolute;
@@ -5657,8 +5729,8 @@ body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs_
   left: 0;
   right: 100%;
   z-index: -1;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link::before {
   background: #E9DDC1;
@@ -5666,13 +5738,29 @@ body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs_
 body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active::before {
   background: #C9AB63;
 }
-body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link:hover::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link:focus::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:hover::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:focus::before {
-  right: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+@media (pointer: coarse) {
+  body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link:active::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:active::before {
+    right: 0;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:active {
+    color: #FFFFFF;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
 }
-body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:hover, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:focus {
-  color: #FFFFFF;
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link:hover::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link:focus::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:hover::before, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:focus::before {
+    right: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:hover, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active:focus {
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link::after, body .content-main .main .section__faq .faq-tabs .row .faq-tabs__list .faq-tabs__point .point-link.active::after {
   position: absolute;
@@ -5737,6 +5825,8 @@ body .content-main .main .section__faq .faq-collapse__item .collapse-link {
   background: #FFFFFF;
   border: 1px solid #E7E7E9;
   z-index: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 @media (max-width: 767px) {
   body .content-main .main .section__faq .faq-collapse__item .collapse-link {
@@ -5753,8 +5843,8 @@ body .content-main .main .section__faq .faq-collapse__item .collapse-link::befor
   left: 0;
   right: 100%;
   z-index: -1;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 body .content-main .main .section__faq .faq-collapse__item .collapse-link::before {
   background: #C9AB63;
@@ -5762,13 +5852,29 @@ body .content-main .main .section__faq .faq-collapse__item .collapse-link::befor
 body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed::before {
   background: #E9DDC1;
 }
-body .content-main .main .section__faq .faq-collapse__item .collapse-link:hover::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link:focus::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed:hover::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed:focus::before {
-  right: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+@media (pointer: coarse) {
+  body .content-main .main .section__faq .faq-collapse__item .collapse-link:active::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed:active::before {
+    right: 0;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
+  body .content-main .main .section__faq .faq-collapse__item .collapse-link:not(.collapsed):active {
+    color: #FFFFFF;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+  }
 }
-body .content-main .main .section__faq .faq-collapse__item .collapse-link:not(.collapsed):hover, body .content-main .main .section__faq .faq-collapse__item .collapse-link:not(.collapsed):focus {
-  color: #FFFFFF;
+@media (false), (hover: hover) and (pointer: fine) {
+  body .content-main .main .section__faq .faq-collapse__item .collapse-link:hover::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link:focus::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed:hover::before, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed:focus::before {
+    right: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  body .content-main .main .section__faq .faq-collapse__item .collapse-link:not(.collapsed):hover, body .content-main .main .section__faq .faq-collapse__item .collapse-link:not(.collapsed):focus {
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 body .content-main .main .section__faq .faq-collapse__item .collapse-link::after, body .content-main .main .section__faq .faq-collapse__item .collapse-link.collapsed::after {
   position: absolute;

@@ -130,15 +130,25 @@ body {
           width: auto;
           height: auto;
           max-width: 100%;
+          transition: all 0.5s ease;
 
           @media (max-width: 1440px) {
             position: relative;
           }
 
-          &:hover,
-          &:focus {
-            transform: scale(0.9);
-            transition: all 0.5s ease;
+          @media(pointer: coarse) {
+            &:active {
+              transform: scale(0.9);
+              transition: all 0.1s ease;
+            }
+          }
+
+          @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+            &:hover,
+            &:focus {
+              transform: scale(0.9);
+              transition: all 0.5s ease;
+            }
           }
         }
       }
@@ -438,6 +448,7 @@ body {
                   line-height: 16px;
                   color: #0F0F28;
                   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
 
                   @media (max-width: 1024px) {
                     padding: 0 16px 10px 20px;
@@ -448,12 +459,23 @@ body {
                     color: #C9AB63;
                     border-bottom-color: #C9AB63;
                   }
-                }
 
-                .nav-link:hover,
-                .nav-link:focus {
-                  color: #E9DDC1;
-                  border-bottom: 2px solid #E9DDC1;
+                  @media(pointer: coarse) {
+                    &:active {
+                      color: #E9DDC1;
+                      border-bottom: 2px solid #E9DDC1;
+                      transition: all 0.1s ease;
+                    }
+                  }
+
+                  @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                    &:hover,
+                    &:focus {
+                      color: #E9DDC1;
+                      border-bottom: 2px solid #E9DDC1;
+                      transition: all 0.3s ease;
+                    }
+                  }
                 }
               }
             }
@@ -690,7 +712,7 @@ body {
             text-align: center;
             text-transform: uppercase;
             color: #FFFFFF;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             box-shadow: inset 0 0 0 0 transparent;
 
             @media (max-width: 1024px) {
@@ -704,15 +726,29 @@ body {
               line-height: 14px;
             }
 
-            &:hover {
-              background: #FFFFFF;
-              color: #C9AB63;
-              border: 2px solid #C9AB63;
-              box-shadow: inset 0 0 0 50px #FFFFFF;
+            @media(pointer: coarse) {
+              &:active {
+                background: #FFFFFF;
+                color: #C9AB63;
+                border: 2px solid #C9AB63;
+                box-shadow: inset 0 0 0 50px #FFFFFF;
+                transition: all 0.1s ease;
+              }
             }
 
-            &:focus {
-              background: #E9DDC1;
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover {
+                background: #FFFFFF;
+                color: #C9AB63;
+                border: 2px solid #C9AB63;
+                box-shadow: inset 0 0 0 50px #FFFFFF;
+                transition: all 0.5s ease;
+              }
+
+              &:focus {
+                background: #E9DDC1;
+                transition: all 0.5s ease;
+              }
             }
           }
         }
@@ -831,11 +867,21 @@ body {
               background-position: 0 100%;
               background-size: 0 2px, 100% 2px;
               background-repeat: no-repeat;
-              transition: all 0.3s ease;
+              transition: all 0.5s ease;
 
-              &:hover,
-              &:focus {
-                background-size: 100% 2px, 0 2px;
+              @media(pointer: coarse) {
+                &:active {
+                  background-size: 100% 2px, 0 2px;
+                  transition: all 0.1s ease;
+                }
+              }
+
+              @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                &:hover,
+                &:focus {
+                  background-size: 100% 2px, 0 2px;
+                  transition: all 0.5s ease;
+                }
               }
             }
           }
@@ -858,7 +904,7 @@ body {
             color: #FFFFFF;
             border: 2px solid transparent;
             background: #C9AB63;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             box-shadow: inset 0 0 0 50px transparent;
 
             @media (max-width: 1279px) {
@@ -872,15 +918,29 @@ body {
               line-height: 14px;
             }
 
-            &:hover {
-              background: #FFFFFF;
-              color: #C9AB63;
-              border: 2px solid #C9AB63;
-              box-shadow: inset 0 0 0 50px #FFFFFF;
+            @media(pointer: coarse) {
+              &:active {
+                color: #C9AB63;
+                background: #FFFFFF;
+                box-shadow: inset 0 0 0 50px #FFFFFF;
+                border: 2px solid #C9AB63;
+                transition: all 0.1s ease;
+              }
             }
 
-            &:focus {
-              background: #E9DDC1;
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover {
+                color: #C9AB63;
+                background: #FFFFFF;
+                box-shadow: inset 0 0 0 50px #FFFFFF;
+                border: 2px solid #C9AB63;
+                transition: all 0.5s ease;
+              }
+
+              &:focus {
+                background: #E9DDC1;
+                transition: all 0.5s ease;
+              }
             }
           }
         }
@@ -976,6 +1036,7 @@ body {
                   color: #0F0F28;
                   border: 1px solid #E7E7E9;
                   z-index: 1;
+                  transition: all 0.5s ease;
 
                   &::before,
                   &.active::before {
@@ -986,7 +1047,7 @@ body {
                     left: 0;
                     right: 100%;
                     z-index: -1;
-                    transition: all 0.5s;
+                    transition: all 0.5s ease;
                   }
 
                   &::before {
@@ -997,17 +1058,33 @@ body {
                     background: #C9AB63;
                   }
 
-                  &:hover::before,
-                  &:focus::before,
-                  &.active:hover::before,
-                  &.active:focus::before {
-                    right: 0;
-                    transition: all 0.5s;
+                  @media(pointer: coarse) {
+                    &:active::before,
+                    &.active:active::before {
+                      right: 0;
+                      transition: all 0.1s ease;
+                    }
+
+                    &.active:active {
+                      color: #FFFFFF;
+                      transition: all 0.1s ease;
+                    }
                   }
 
-                  &.active:hover,
-                  &.active:focus {
-                    color: #FFFFFF;
+                  @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                    &:hover::before,
+                    &:focus::before,
+                    &.active:hover::before,
+                    &.active:focus::before {
+                      right: 0;
+                      transition: all 0.5s ease;
+                    }
+
+                    &.active:hover,
+                    &.active:focus {
+                      color: #FFFFFF;
+                      transition: all 0.5s ease;
+                    }
                   }
 
                   &::after,
@@ -1084,6 +1161,7 @@ body {
               background: #FFFFFF;
               border: 1px solid #E7E7E9;
               z-index: 1;
+              transition: all 0.5s ease;
 
               @media (max-width: 767px) {
                 padding: 22px 20px;
@@ -1100,7 +1178,7 @@ body {
                 left: 0;
                 right: 100%;
                 z-index: -1;
-                transition: all 0.5s;
+                transition: all 0.5s ease;
               }
 
               &::before {
@@ -1111,17 +1189,33 @@ body {
                 background: #E9DDC1;
               }
 
-              &:hover::before,
-              &:focus::before,
-              &.collapsed:hover::before,
-              &.collapsed:focus::before {
-                right: 0;
-                transition: all 0.5s;
+              @media(pointer: coarse) {
+                &:active::before,
+                &.collapsed:active::before {
+                  right: 0;
+                  transition: all 0.1s ease;
+                }
+
+                &:not(.collapsed):active {
+                  color: #FFFFFF;
+                  transition: all 0.1s ease;
+                }
               }
 
-              &:not(.collapsed):hover,
-              &:not(.collapsed):focus {
-                color: #FFFFFF;
+              @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                &:hover::before,
+                &:focus::before,
+                &.collapsed:hover::before,
+                &.collapsed:focus::before {
+                  right: 0;
+                  transition: all 0.5s ease;
+                }
+
+                &:not(.collapsed):hover,
+                &:not(.collapsed):focus {
+                  color: #FFFFFF;
+                  transition: all 0.5s ease;
+                }
               }
 
               &::after,
