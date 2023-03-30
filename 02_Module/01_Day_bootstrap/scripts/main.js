@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
         menuButton.addEventListener("click", () => {
             closeBackground.classList.add("active");
             menu.classList.add("active");
+            document.body.style.overflow = "hidden";
 
         })
     }
@@ -31,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
         closeMenuCross.addEventListener("click", () => {
             closeBackground.classList.remove("active");
             menu.classList.remove("active");
+            document.body.style.overflow = "";
         })
     }
 })
