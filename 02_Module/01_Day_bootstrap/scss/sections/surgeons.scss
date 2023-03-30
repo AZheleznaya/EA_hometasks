@@ -1,0 +1,137 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.section__surgeons {
+  padding: 62px 0;
+
+  @media (max-width: $media-breakpoints-lg) {
+    padding: 100px 0 81px;
+  }
+
+  @media (max-width: $media-breakpoints-md) {
+    padding: 40px 0 80px;
+  }
+
+  .surgeons {
+    .surgeons__subtitle {
+      @include geometria-normal-700;
+      @include fs-16-lh-16;
+      @include center-uppercase;
+      color: $gold;
+
+      @media (max-width: $media-breakpoints-md) {
+        @include fs-14-lh-14;
+      }
+    }
+
+    .surgeons__title {
+      padding: 16px 0 32px;
+      @include geometria-normal-400;
+      @include fs-50-lh-50;
+      @include center-uppercase;
+      color: $deepBlue;
+
+      @media (max-width: $media-breakpoints-lg) {
+        padding: 8px 0 24px;
+        @include fs-44-lh-44;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        @include fs-32-lh-32;
+      }
+    }
+
+    .surgeons__description {
+      padding-bottom: 61px;
+      @include geometria-normal-400;
+      @include fs-18-lh-25;
+      color: $deeplBlue-60;
+      text-align: center;
+
+      @media (max-width: $media-breakpoints-lg) {
+        padding-bottom: 36px;
+        @include fs-16-lh-22;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        padding-bottom: 30px;
+      }
+    }
+
+    .col-12,
+    .col-md-4,
+    .col-xl-3 {
+      padding: 0 1px 5px;
+
+      @media (max-width: $media-breakpoints-lg) {
+        padding: 0 2px 4px;
+      }
+
+      .surgeon__image {
+        position: relative;
+        max-width: 343px;
+        width: 100%;
+        min-height: 520px;
+        height: 100%;
+        border-bottom: 4px solid $gold;
+        overflow: hidden;
+
+        @media (max-width: $media-breakpoints-lg) {
+          max-width: 227px;
+          min-height: 340px;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          display: block;
+          margin: 0 auto;
+          max-width: 320px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(43, 43, 88, 0) 0%, #1D1D4E 100%);
+        }
+
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .button {
+      margin: 27px auto 0;
+      @include gold-button-desktop;
+
+      @media (max-width: $media-breakpoints-lg) {
+        margin: 19px auto 0;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        margin: 20px auto 0;
+        @include gold-button-mobile;
+      }
+
+      @media (pointer: coarse) {
+        &:active {
+          @include pointer-coarse-active-button;
+        }
+      }
+
+      @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+        &:hover {
+          @include not-pointer-coarse-hover-button;
+        }
+
+        &:focus {
+          @include not-pointer-coarse-focus-button;
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+@import "../variables.scss";
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -29,37 +31,37 @@ html {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $media-breakpoints-sm) {
   .container, .container-sm {
     max-width: 598px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-breakpoints-md) {
   .container, .container-sm, .container-md {
     max-width: 710px;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: $media-breakpoints-lg) {
   .container, .container-sm, .container-md, .container-lg {
     max-width: 1000px;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $media-breakpoints-xl) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1200px;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $media-breakpoints-xxl) {
   .container, .container-sm, .container-md, .container-lg, .container-xxl {
     max-width: 1200px;
   }
 }
 
-@media (min-width: 1720px) {
+@media (min-width: $media-breakpoints-xxxl) {
   .container, .container-sm, .container-md, .container-lg, .container-xxl, .container-xxxl {
     max-width: 1405px;
   }
@@ -339,7 +341,7 @@ html {
   margin-left: 91.666667%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $media-breakpoints-sm) {
   .col-sm {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -541,7 +543,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-breakpoints-md) {
   .col-md {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -743,7 +745,7 @@ html {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: $media-breakpoints-lg) {
   .col-lg {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -945,7 +947,7 @@ html {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $media-breakpoints-xl) {
   .col-xl {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1147,7 +1149,7 @@ html {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $media-breakpoints-xxl) {
   .col-xxl-4 {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
@@ -1193,7 +1195,7 @@ html {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $media-breakpoints-sm) {
   .d-sm-none {
     display: none !important;
   }
@@ -1225,7 +1227,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-breakpoints-md) {
   .d-md-none {
     display: none !important;
   }
@@ -1257,7 +1259,7 @@ html {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: $media-breakpoints-lg) {
   .d-lg-none {
     display: none !important;
   }
@@ -1289,7 +1291,7 @@ html {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $media-breakpoints-xl) {
   .d-xl-none {
     display: none !important;
   }
@@ -1523,7 +1525,7 @@ html {
   align-self: stretch !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $media-breakpoints-sm) {
   .flex-sm-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -1662,7 +1664,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-breakpoints-md) {
   .flex-md-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -1801,7 +1803,7 @@ html {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: $media-breakpoints-lg) {
   .flex-lg-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -1940,7 +1942,7 @@ html {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $media-breakpoints-xl) {
   .flex-xl-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -2511,7 +2513,7 @@ html {
   margin-left: auto !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $media-breakpoints-sm) {
   .m-sm-0 {
     margin: 0 !important;
   }
@@ -2856,7 +2858,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-breakpoints-md) {
   .m-md-0 {
     margin: 0 !important;
   }
@@ -3201,7 +3203,7 @@ html {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: $media-breakpoints-lg) {
   .m-lg-0 {
     margin: 0 !important;
   }
@@ -3546,7 +3548,7 @@ html {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $media-breakpoints-xl) {
   .m-xl-0 {
     margin: 0 !important;
   }

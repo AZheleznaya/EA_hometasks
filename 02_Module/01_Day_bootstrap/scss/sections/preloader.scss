@@ -1,0 +1,57 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.preloader {
+  position: fixed;
+  @include flex-center-center;
+  @include height-100vh;
+  @include width-100vw;
+  background-color: $deepBlue;
+  z-index: 10;
+
+  &__circle {
+    width: 16vmax;
+    height: 16vmax;
+    border-right: 8px solid $gold;
+    border-radius: 100%;
+    animation: spinRight 1s linear infinite;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 14vmax;
+      height: 14vmax;
+      display: block;
+      position: absolute;
+      top: calc(50% - 7vmax);
+      left: calc(50% - 7vmax);
+      border-left: 7px solid $gold;
+      border-radius: 100%;
+      animation: spinLeft 1s linear infinite;
+    }
+
+    &::after {
+      width: 12vmax;
+      height: 12vmax;
+      top: calc(50% - 6vmax);
+      left: calc(50% - 6vmax);
+      border: 0;
+      border-right: 6px solid $gold;
+      animation: none;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  @keyframes spinLeft {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(720deg);}
+  }
+
+  @keyframes spinRight {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+  }
+}

@@ -1,0 +1,143 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.section__lorem {
+  padding: 72px 0 136px;
+
+  @media (max-width: $media-breakpoints-lg) {
+    padding: 24px 0 100px;
+  }
+
+  @media (max-width: $media-breakpoints-md) {
+    padding: 0 0 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .lorem__image {
+    margin-right: 35px;
+    max-width: 680px;
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: $media-breakpoints-xl) {
+      margin-right: 0;
+    }
+
+    @media (max-width: $media-breakpoints-lg) {
+      max-width: 687px;
+      min-height: 320px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      min-width: 318px;
+      max-height: 240px;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .lorem__paragraph {
+    position: relative;
+    padding-left: 24px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: $gold;
+    }
+
+    .paragraph__title {
+      padding-bottom: 32px;
+      @include geometria-normal-400;
+      @include fs-50-lh-50;
+      color: $deepBlue;
+      text-transform: uppercase;
+
+      @media (max-width: $media-breakpoints-xl) {
+        padding-bottom: 24px;
+        @include fs-44-lh-44;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        @include fs-32-lh-32;
+      }
+    }
+
+    .paragraph__description {
+      @include geometria-normal-400;
+      @include fs-18-lh-25;
+      color: $deeplBlue-60;
+
+      @media (max-width: $media-breakpoints-xl) {
+        @include fs-16-lh-22;
+      }
+
+      .very-long-link {
+        color: #C9AB63;
+        background-image: linear-gradient(to left, $paleGold, $gold 100%);
+        background-position: 0 100%;
+        background-size: 0 2px, 100% 2px;
+        background-repeat: no-repeat;
+        transition: all 0.5s ease;
+
+        @media(pointer: coarse) {
+          &:active {
+            background-size: 100% 2px, 0 2px;
+            transition: all 0.1s ease;
+          }
+        }
+
+        @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+          &:hover,
+          &:focus {
+            background-size: 100% 2px, 0 2px;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+
+    .paragraph__button {
+      margin-top: 44px;
+      @include gold-button-desktop;
+
+      @media (max-width: $media-breakpoints-xl) {
+        margin-top: 32px;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        margin-top: 24px;
+        @include gold-button-mobile;
+      }
+
+      @media (pointer: coarse) {
+        &:active {
+          @include pointer-coarse-active-button;
+        }
+      }
+
+      @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+        &:hover {
+          @include not-pointer-coarse-hover-button;
+        }
+
+        &:focus {
+          @include not-pointer-coarse-focus-button;
+        }
+      }
+    }
+  }
+}

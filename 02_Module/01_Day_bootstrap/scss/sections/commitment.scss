@@ -1,0 +1,123 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.section__commitment {
+  padding-top: 105px;
+  padding-bottom: 58px;
+  width: 100%;
+
+  @media (max-width: $media-breakpoints-xxl) {
+    padding-bottom: 84px;
+  }
+
+  @media (max-width: $media-breakpoints-md) {
+    padding-bottom: 64px;
+  }
+
+  .commitment-title {
+    position: relative;
+    padding-bottom: 40px;
+    @include geometria-normal-400;
+    @include fs-50-lh-50;
+    @include center-uppercase;
+    color: $deepBlue;
+
+    @media (max-width: $media-breakpoints-lg) {
+      margin: 0 auto;
+      max-width: 500px;
+      @include fs-44-lh-44;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -20px;
+        right: calc(50% - 140px / 2);
+        width: 140px;
+        height: 2px;
+        background: $gold;
+      }
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      padding-bottom: 32px;
+      @include fs-32-lh-32;
+    }
+  }
+
+  .col-12,
+  .col-lg-10,
+  .col-xl-6,
+  .col-xxl-4 {
+    .card {
+      @include flex-column;
+      padding: 48px 56px 78px;
+      max-width: 100%;
+      height: 100%;
+      color: $white;
+      background: $gold;
+      backdrop-filter: blur(25px);
+
+      @media (max-width: $media-breakpoints-lg) {
+        padding: 20px 20px 24px;
+        margin: 0 56px;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        margin: 0;
+        padding: 20px 19px 30px 20px;
+        align-items: center;
+      }
+
+      &__image {
+        padding-bottom: 56px;
+        max-width: 72px;
+
+        @media (max-width: $media-breakpoints-lg) {
+          padding-bottom: 20px;
+          max-width: 64px;
+        }
+
+        .image-lottie {
+          margin-left: -20px;
+          margin-top: -10px;
+          width: 100px;
+          height: 100px;
+
+          @media (max-width: $media-breakpoints-md) {
+            margin-right: -20px;
+          }
+        }
+      }
+
+      &__title {
+        padding-bottom: 24px;
+        @include geometria-normal-400;
+        @include fs-24-lh-24;
+        text-transform: uppercase;
+        color: $white;
+
+        @media (max-width: $media-breakpoints-lg) {
+          padding-bottom: 20px;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          text-align: center;
+        }
+      }
+
+      &__description {
+        @include geometria-normal-500;
+        @include fs-18-lh-25;
+        color: $white-80;
+
+        @media (max-width: $media-breakpoints-lg) {
+          @include fs-16-lh-22;
+        }
+      }
+    }
+  }
+
+  .col-12 {
+    margin-bottom: 16px;
+  }
+}
