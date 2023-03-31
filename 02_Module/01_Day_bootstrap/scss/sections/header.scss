@@ -154,7 +154,7 @@
       padding-right: 12px;
       min-width: 360px;
       @include height-100vh;
-      background: $deepBlue;
+      background: $deepBlue-80;
       backdrop-filter: blur(4px);
 
       .header__close-icon {

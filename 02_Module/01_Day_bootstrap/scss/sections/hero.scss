@@ -4,7 +4,6 @@
 .section__hero {
   position: relative;
   @include flex-center;
-  margin-left: -1px;
   max-height: 1040px;
   min-height: 580px;
   @include height-100vh;
