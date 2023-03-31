@@ -13,6 +13,36 @@
     padding-bottom: 64px;
   }
 
+  .gallery-title {
+    position: relative;
+    padding-bottom: 40px;
+    @include geometria-normal-400;
+    @include fs-50-lh-50;
+    @include center-uppercase;
+    color: $deepBlue;
+
+    @media (max-width: $media-breakpoints-lg) {
+      margin: 0 auto;
+      max-width: 500px;
+      @include fs-44-lh-44;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -20px;
+        right: calc(50% - 140px / 2);
+        width: 140px;
+        height: 2px;
+        background: $gold;
+      }
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      padding-bottom: 32px;
+      @include fs-32-lh-32;
+    }
+  }
+
   .gallery-list {
     @include flex-column-center-center;
     gap: 8px;
