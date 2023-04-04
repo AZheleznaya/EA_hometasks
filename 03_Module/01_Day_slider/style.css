@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Days One";
+  src: url("../assets/fonts/DaysOne-Regular.eot");
+  src: local("Days One"), local("DaysOne-Regular"), url("../assets/fonts/DaysOne-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/DaysOne-Regular.woff2") format("woff2"), url("../assets/fonts/DaysOne-Regular.woff") format("woff"), url("../assets/fonts/DaysOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.pug-swiper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.pug-swiper__title {
+  font-family: "Days One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.pug-swiper .swiper-container {
+  width: 100%;
+  height: 400px;
+}
+.pug-swiper .swiper-container .swiper-slide__image {
+  padding: 0 30px;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: #151815;
+}
+
+.pug-splide {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.pug-splide__title {
+  font-family: "Days One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.pug-splide .splide__track {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.pug-splide .splide__track .splide__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pug-splide .splide__track .splide__list .splide__slide {
+  background-color: #151815;
+}
+.pug-splide .splide__track .splide__list .splide__slide.is-prev {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1200px) rotate3d(0, 1, 0, 10deg) scale(1.1);
+          transform: perspective(1200px) rotate3d(0, 1, 0, 10deg) scale(1.1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.pug-splide .splide__track .splide__list .splide__slide.is-next {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1200px) rotate3d(0, 1, 0, -10deg) scale(1.1);
+          transform: perspective(1200px) rotate3d(0, 1, 0, -10deg) scale(1.1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.pug-splide .splide__track .splide__list .splide__slide .splide__image {
+  padding: 0 7px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #040504;
+}
+body .wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,10 @@
+- var swiperImages = ["./assets/images/hero-1.png", "./assets/images/hero-2.png", "./assets/images/hero-3.png", "./assets/images/hero-4.png", "./assets/images/hero-5.png"];
+
+section.pug-swiper
+    h1.pug-swiper__title
+        | Pug Swiper 
+    .swiper-container
+        .swiper-wrapper
+            each image in swiperImages 
+                .swiper-slide
+                    img(src=image, alt="hero").swiper-slide__image

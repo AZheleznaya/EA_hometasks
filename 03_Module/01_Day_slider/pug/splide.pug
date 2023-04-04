@@ -1,0 +1,11 @@
+- var splideImages = ["./assets/images/hero-1.png", "./assets/images/hero-2.png", "./assets/images/hero-3.png", "./assets/images/hero-4.png", "./assets/images/hero-5.png"];
+
+section.pug-splide
+    h1.pug-splide__title
+        | Pug Splide
+    .splide
+        .splide__track
+            ul.splide__list
+                each image in splideImages 
+                    li.splide__slide
+                        img(src=image, alt="hero").splide__image
