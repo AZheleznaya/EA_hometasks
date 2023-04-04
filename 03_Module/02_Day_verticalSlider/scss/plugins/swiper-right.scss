@@ -1,0 +1,40 @@
+.swiper-right {
+    margin-right: 80px;
+    max-width: 522px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .swiper-container__right {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &__title {
+                padding-bottom: 20px;
+                font-family: 'Proxima Nova Lt';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 90px;
+                line-height: 90px;
+                color: #111111;
+            }
+    
+            &__description {
+                padding-right: 40px;
+                font-family: 'Proxima Nova Rg';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                color: #111111;
+                text-align: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+mixin swiper-right()
+    section.swiper-right
+        .swiper-container__right
+            .swiper-wrapper
+                each title in ["Determine Value", "Build Value", "Realize Value", "Test"]
+                    .swiper-slide
+                        h1.swiper-slide__title
+                            | #{title}
+                        p.swiper-slide__description
+                            | Lorem Ipsum is simply dummy text of the printing and typesetting industry.</br>
+                            | Lorem Ipsum has been the industry's standard dummy text
