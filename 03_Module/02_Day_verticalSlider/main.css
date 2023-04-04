@@ -201,6 +201,16 @@
   height: auto;
   padding-left: 22px;
 }
+.swiper-left .swiper-container__left .swiper-slide__text {
+  max-width: 98px;
+  font-family: "Proxima Nova Rg";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111111;
+  opacity: 0.8;
+}
 .swiper-left .swiper-container__left .swiper-pagination {
   width: 4px;
   background: #D0D0D5;

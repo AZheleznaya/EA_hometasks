@@ -16,6 +16,17 @@
             width: 100%;
             height: auto;
             padding-left: 22px;
+
+            &__text {
+                max-width: 98px;
+                font-family: 'Proxima Nova Rg';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #111111;
+                opacity: 0.8;
+            }
         }
 
         .swiper-pagination {
