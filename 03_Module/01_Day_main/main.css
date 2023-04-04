@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Days One";
+  src: url("../assets/fonts/DaysOne-Regular.eot");
+  src: local("Days One"), local("DaysOne-Regular"), url("../assets/fonts/DaysOne-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/DaysOne-Regular.woff2") format("woff2"), url("../assets/fonts/DaysOne-Regular.woff") format("woff"), url("../assets/fonts/DaysOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.slider {
+  max-width: 1920px;
+  width: 100%;
+  position: relative;
+  background: #FFFFFF;
+}
+.slider .swiper-navigation {
+  position: absolute;
+  bottom: -1px;
+  right: 50%;
+  padding: 0 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 233px;
+  height: 40px;
+  background: #FFFFFF;
+  z-index: 10;
+}
+.slider .swiper-navigation .swiper-button-prev-unique,
+.slider .swiper-navigation .swiper-button-next-unique {
+  color: #5A5A5A;
+  cursor: pointer;
+}
+.slider .swiper-navigation .swiper-button-prev-unique svg,
+.slider .swiper-navigation .swiper-button-next-unique svg {
+  vertical-align: middle;
+}
+.slider .swiper-navigation .swiper-button-prev-unique:hover,
+.slider .swiper-navigation .swiper-button-next-unique:hover {
+  color: #24B7BA;
+}
+.slider .swiper-navigation .swiper-pagination-unique {
+  text-align: center;
+  font-family: "Days One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  word-spacing: -10px;
+  color: #24B7BA;
+}
+.slider .swiper-container {
+  max-width: 1440px;
+  margin-left: calc((100vw - 1440px) / 2);
+  overflow: hidden;
+}
+.slider .swiper-container .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide {
+  max-width: 1440px;
+  width: 100%;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-description {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-right: 50px;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-description__title {
+  padding-bottom: 54px;
+  font-family: "Days One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 59px;
+  color: #252525;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-description__button {
+  padding: 16px 32px;
+  font-family: "Days One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  background: linear-gradient(16deg, #06BEB6 0.51%, #48B1BF 100%);
+  border-radius: 4px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-description__button:hover {
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-image {
+  width: 100%;
+}
+.slider .swiper-container .swiper-wrapper .swiper-slide__info .info-image .image {
+  min-height: 495px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+body .container {
+  margin: 0 auto;
+}

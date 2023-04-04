@@ -1,0 +1,39 @@
+mixin swiper()
+    section.slider 
+        .swiper-navigation
+            .swiper-button-prev-unique
+                include ../assets/images/arrow-left.svg
+            .swiper-pagination-unique
+            .swiper-button-next-unique
+                include ../assets/images/arrow-right.svg
+        .swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    .swiper-slide__info
+                        .info-description 
+                            h1.info-description__title 
+                                | Домашний кинотеатр под ключ
+                            a.info-description__button(href="javascript:void(0);")
+                                | Оставить заявку
+                        .info-image 
+                            img.image(src="assets/images/slide-1.png")
+                .swiper-slide
+                    .swiper-slide__info
+                        .info-description 
+                            h1.info-description__title 
+                                | Система “Умный дом” под ключ
+                            a.info-description__button(href="javascript:void(0);")
+                                | Оставить заявку
+                        .info-image 
+                            img.image(src="assets/images/slide-2.png")
+                .swiper-slide
+                    .swiper-slide__info
+                        .info-description 
+                            h1.info-description__title 
+                                | Система “Мультирум” под ключ
+                            a.info-description__button(href="javascript:void(0);")
+                                | Оставить заявку
+                        .info-image 
+                            img.image(src="assets/images/slide-3.png")
+        
+            
