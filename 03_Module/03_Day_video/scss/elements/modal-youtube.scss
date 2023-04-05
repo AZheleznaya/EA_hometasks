@@ -1,0 +1,101 @@
+.modal {
+    &-dialog {
+        margin: 0 auto;
+        max-width: 1395px;
+        max-height: 800px;
+        padding: 75px 40px 0;
+
+        @media (max-width: 1480px) {
+            padding-top: 100px;
+        }
+
+        @media (max-width: 1024px) {
+            max-width: 688px;
+            max-height: 480px;
+            padding-top: 307px;
+        }
+
+        @media (max-width: 500px) {
+            max-width: 330px;
+            max-height: 230px;
+            padding: 237px 15px 0;
+        }
+
+        .modal-content {
+            background: none;
+            border: none;
+            border-radius: 0;
+
+            @media (max-width: 1024px) {
+                align-items: center;
+            }
+
+            .close {
+                position: absolute;
+                right: initial;
+                top: initial;
+                left: 110%;
+                bottom: 95%;
+                width: 70px;
+                height: 70px;
+                background: #FF1E00;    
+                border: 1px solid #FF1E00;
+                border-radius: 5px;
+                opacity: 1;
+                cursor: pointer;
+
+                @media (max-width: 1720px) {
+                    left: 105%;
+                }
+
+                @media (max-width: 1590px) {
+                    left: 101%;
+                }
+
+                @media (max-width: 1480px) {
+                    left: calc(100% - 70px);
+                    bottom: calc(100% + 20px);
+                }
+
+                @media (max-width: 1024px) {
+                    left: calc(100% - 50px);
+                    width: 50px;
+                    height: 50px;
+                    padding-bottom: 5px;
+                }
+
+                & svg {
+                    width: 25px;
+                    height: 25px;
+
+                    @media (max-width: 1024px) {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+
+            .modal-body {
+                max-width: 1395px;
+                width: 100%;
+                height: 800px;
+                padding: 0;
+
+                @media (max-width: 1024px) {
+                    max-width: 688px;
+                    height: 480px;
+                }
+
+                @media (max-width: 500px) {
+                    max-width: 330px;
+                    height: 230px;
+                }
+
+                #player {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

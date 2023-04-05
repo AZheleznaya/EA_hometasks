@@ -1,0 +1,15 @@
+mixin modal-local()
+    .modal.fade.modal-local#modalVideo(tabindex="-1" aria-labelledby="videoModal" aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-bg
+                    button.close-button(type="button" data-dismiss="modal" aria-label="Close")
+                        svg(viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M15.3442 0.655813C14.8899 0.201559 14.1535 0.201559 13.6992 0.655813L8.00004 6.35498L2.30087 0.655814C1.84662 0.20156 1.11012 0.201559 0.65587 0.655813C0.201616 1.11007 0.201616 1.84656 0.65587 2.30081L6.35504 7.99998L0.65587 13.6991C0.201616 14.1534 0.201616 14.8899 0.65587 15.3441C1.11012 15.7984 1.84662 15.7984 2.30087 15.3441L8.00004 9.64498L13.6992 15.3441C14.1535 15.7984 14.8899 15.7984 15.3442 15.3441C15.7985 14.8899 15.7985 14.1534 15.3442 13.6991L9.64504 7.99998L15.3442 2.30081C15.7985 1.84656 15.7985 1.11007 15.3442 0.655813Z' fill='white')
+                .modal-body
+                    video.popup-video#video
+                        source(src="assets/videos/local-video.mp4" type="video/mp4")
+                    button.video-play
+                        svg(viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            circle(cx='50' cy='50' r='48' fill='white' fill-opacity='0.2' stroke='white' stroke-width='4')
+                            path(d='M33.0566 28.5324C33.0566 26.9778 34.7526 26.0176 36.0856 26.8174L71.865 48.285C73.1597 49.0618 73.1597 50.9382 71.865 51.715L36.0856 73.1826C34.7526 73.9824 33.0566 73.0222 33.0566 71.4676V28.5324Z' fill='white')

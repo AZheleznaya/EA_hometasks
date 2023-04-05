@@ -64,10 +64,6 @@
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-.slider .swiper-container .swiper-wrapper .swiper-slide {
-  max-width: 1440px;
-  width: 100%;
-}
 .slider .swiper-container .swiper-wrapper .swiper-slide__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -129,5 +125,7 @@ body {
   overflow: hidden;
 }
 body .container {
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
