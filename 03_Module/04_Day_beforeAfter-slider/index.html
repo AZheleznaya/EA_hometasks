@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slider</title>
+    <meta charset="UTF-8"/>
+    <meta content="Slider" name="description"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <section class="slider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-1-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-1-after.jpg" alt="after"/></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-2-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-2-after.jpg" alt="after"/></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-3-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-3-after.jpg" alt="after"/></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-1-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-1-after.jpg" alt="after"/></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-2-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-2-after.jpg" alt="after"/></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="image-compare"><img class="image-compare-before" src="assets/images/slide-3-before.jpg" alt="before"/><img class="image-compare-after" src="assets/images/slide-3-after.jpg" alt="after"/></div>
+          </div>
+        </div>
+        <button class="swiper-button-prev">
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.00018 17L1.00018 9L9.00018 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <button class="swiper-button-next">
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.00018 17L9.00018 9L1.00018 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/imagesCompare.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+.slider {
+    max-width: 100vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #FAFAFA;
+    overflow: hidden;
+
+    .swiper-container {
+        position: relative;
+        width: 100%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            height: 182px;
+            background: #0F0F28;
+            transform: translateY(50%);
+        }
+
+        .swiper-wrapper {
+            align-items: center;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: auto;
+
+            .image-compare {
+                max-width: 242px;
+                height: 166px;
+
+                .control {
+                    position: absolute;
+                    content: "";
+                    top: calc(50% - 41px);
+                    left: calc(50% - 4.5px);
+                    width: 9px;
+                    height: 82px;
+                    background: #FFFFFF;
+                }
+            }
+            
+            &-active {
+                background: #0F0F28;
+
+                & .image-compare {
+                    max-width: 600px;
+                    height: 410px;
+    
+                    .image-compare-before {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            } 
+        }
+
+        .swiper-button-next {
+            position: absolute;
+            top: calc(50% - 16px);
+            right: calc((100% - 664px) / 2);
+            width: 64px;
+            height: 64px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            background: #C9AB63;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .swiper-button-prev {
+            position: absolute;
+            top: calc(50% - 16px);
+            left: calc((100% - 664px) / 2);
+            width: 64px;
+            height: 64px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            background: #C9AB63;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .swiper-pagination {
+            bottom: calc(50% - 250px);
+
+            &-bullet {
+                margin: 0;
+                width: 12px;
+                height: 12px;
+                border: 1px solid rgba(15, 15, 40, 0.3);
+                background: none;
+
+                &:not(:last-child) {
+                    margin-right: 12px;
+                }
+
+                &-active {
+                    background: #C9AB63;
+                    border: none;
+                }
+            }
+        }
+    }
+}
