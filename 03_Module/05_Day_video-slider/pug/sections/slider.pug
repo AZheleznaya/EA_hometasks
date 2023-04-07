@@ -1,0 +1,53 @@
+mixin slider()
+    section.slider
+        h1.slider-title
+            | What our client's say about working with us
+
+        .swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    video#video-1.swiper-slide__video(poster="assets/images/poster-1.jpg")
+                        source(src="assets/videos/video.mp4" type="video/mp4")
+                    button#video-play-1.video-play
+                        svg(viewBox='0 0 36 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M34.2541 17.9704L4.12891 0.577734C3.40359 0.158984 2.51031 0.158984 1.78516 0.577734C1.06 0.996484 0.613281 1.77008 0.613281 2.60742V37.3919C0.613281 38.2293 1.06 39.003 1.78516 39.4216C2.14766 39.631 2.55234 39.7357 2.95703 39.7357C3.36172 39.7357 3.76641 39.631 4.12891 39.4216L34.2541 22.0298C34.9792 21.6112 35.4259 20.8374 35.4259 20.0001C35.4259 19.1627 34.9792 18.3891 34.2541 17.9704Z' fill='currentColor')
+                    .video-hero
+                        p.video-hero__name
+                            | Michael Martin
+                        p.video-hero__position
+                            | Business consultant
+
+                .swiper-slide
+                    video#video-2.swiper-slide__video(poster="assets/images/poster-2.jpg")
+                        source(src="assets/videos/video.mp4" type="video/mp4")
+                    button#video-play-2.video-play
+                        svg(viewBox='0 0 36 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M34.2541 17.9704L4.12891 0.577734C3.40359 0.158984 2.51031 0.158984 1.78516 0.577734C1.06 0.996484 0.613281 1.77008 0.613281 2.60742V37.3919C0.613281 38.2293 1.06 39.003 1.78516 39.4216C2.14766 39.631 2.55234 39.7357 2.95703 39.7357C3.36172 39.7357 3.76641 39.631 4.12891 39.4216L34.2541 22.0298C34.9792 21.6112 35.4259 20.8374 35.4259 20.0001C35.4259 19.1627 34.9792 18.3891 34.2541 17.9704Z' fill='currentColor')
+                    .video-hero
+                        p.video-hero__name
+                            | Rebecca Henderson
+                        p.video-hero__position
+                            | brand designer
+
+                .swiper-slide
+                    video#video-3.swiper-slide__video(poster="assets/images/poster-3.jpg")
+                        source(src="assets/videos/video.mp4" type="video/mp4")
+                    button#video-play-3.video-play
+                        svg(viewBox='0 0 36 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M34.2541 17.9704L4.12891 0.577734C3.40359 0.158984 2.51031 0.158984 1.78516 0.577734C1.06 0.996484 0.613281 1.77008 0.613281 2.60742V37.3919C0.613281 38.2293 1.06 39.003 1.78516 39.4216C2.14766 39.631 2.55234 39.7357 2.95703 39.7357C3.36172 39.7357 3.76641 39.631 4.12891 39.4216L34.2541 22.0298C34.9792 21.6112 35.4259 20.8374 35.4259 20.0001C35.4259 19.1627 34.9792 18.3891 34.2541 17.9704Z' fill='currentColor')
+                    .video-hero
+                        p.video-hero__name
+                            | Fernando Gibson
+                        p.video-hero__position
+                            | General Manager
+
+            .swiper-navigation
+                .swiper-button-prev-unique
+                    svg(viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M0.5 30C0.5 13.7076 13.7076 0.5 30 0.5C46.2924 0.5 59.5 13.7076 59.5 30C59.5 46.2924 46.2924 59.5 30 59.5C13.7076 59.5 0.5 46.2924 0.5 30Z' stroke='currentColor')
+                        path(d='M36.6662 29.0635L25.9859 18.3834C25.7389 18.1362 25.4091 18 25.0575 18C24.7059 18 24.3761 18.1362 24.1291 18.3834L23.3426 19.1697C22.8308 19.6821 22.8308 20.5149 23.3426 21.0265L32.3111 29.995L23.3326 38.9735C23.0856 39.2207 22.9492 39.5503 22.9492 39.9017C22.9492 40.2535 23.0856 40.583 23.3326 40.8305L24.1192 41.6166C24.3664 41.8638 24.6959 42 25.0475 42C25.3992 42 25.7289 41.8638 25.9759 41.6166L36.6662 30.9267C36.9138 30.6787 37.0498 30.3476 37.049 29.9956C37.0498 29.6422 36.9138 29.3113 36.6662 29.0635Z' fill='currentColor')
+                .swiper-button-next-unique
+                    svg(viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M0.5 30C0.5 13.7076 13.7076 0.5 30 0.5C46.2924 0.5 59.5 13.7076 59.5 30C59.5 46.2924 46.2924 59.5 30 59.5C13.7076 59.5 0.5 46.2924 0.5 30Z' stroke='currentColor')
+                        path(d='M36.6662 29.0635L25.9859 18.3834C25.7389 18.1362 25.4091 18 25.0575 18C24.7059 18 24.3761 18.1362 24.1291 18.3834L23.3426 19.1697C22.8308 19.6821 22.8308 20.5149 23.3426 21.0265L32.3111 29.995L23.3326 38.9735C23.0856 39.2207 22.9492 39.5503 22.9492 39.9017C22.9492 40.2535 23.0856 40.583 23.3326 40.8305L24.1192 41.6166C24.3664 41.8638 24.6959 42 25.0475 42C25.3992 42 25.7289 41.8638 25.9759 41.6166L36.6662 30.9267C36.9138 30.6787 37.0498 30.3476 37.049 29.9956C37.0498 29.6422 36.9138 29.3113 36.6662 29.0635Z' fill='currentColor')
+                .swiper-pagination-unique
