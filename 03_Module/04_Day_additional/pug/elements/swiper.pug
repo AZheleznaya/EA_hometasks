@@ -1,0 +1,42 @@
+mixin swiper()
+    .slider
+        .swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    .image-compare
+                            img.image-compare-before(src="assets/images/slide-1-before.jpg" alt="before")
+                            img.image-compare-after(src="assets/images/slide-1-after.jpg" alt="after")
+                        
+                .swiper-slide
+                    .image-compare
+                        img.image-compare-before(src="assets/images/slide-2-before.jpg" alt="before")
+                        img.image-compare-after(src="assets/images/slide-2-after.jpg" alt="after")
+
+                .swiper-slide
+                    .image-compare
+                        img.image-compare-before(src="assets/images/slide-3-before.jpg" alt="before")
+                        img.image-compare-after(src="assets/images/slide-3-after.jpg" alt="after")
+                
+                .swiper-slide
+                    .image-compare
+                        img.image-compare-before(src="assets/images/slide-1-before.jpg" alt="before")
+                        img.image-compare-after(src="assets/images/slide-1-after.jpg" alt="after")
+
+                .swiper-slide
+                    .image-compare
+                        img.image-compare-before(src="assets/images/slide-2-before.jpg" alt="before")
+                        img.image-compare-after(src="assets/images/slide-2-after.jpg" alt="after")
+
+                .swiper-slide
+                    .image-compare
+                        img.image-compare-before(src="assets/images/slide-3-before.jpg" alt="before")
+                        img.image-compare-after(src="assets/images/slide-3-after.jpg" alt="after")
+
+            button.swiper-button-prev
+                svg(viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M9.00018 17L1.00018 9L9.00018 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+            button.swiper-button-next
+                svg(viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M1.00018 17L9.00018 9L1.00018 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+
+            .swiper-pagination

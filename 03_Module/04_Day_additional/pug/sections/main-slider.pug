@@ -1,0 +1,39 @@
+include ../elements/swiper
+
+mixin main-slider()
+    section.main-slider
+        .content
+            h2.content-subtitle
+                | OUR GALLERY
+            h1.content-title
+                | Before &amp; After Photos
+            .content-tabs
+                ul.nav.nav-tabs
+                    li.nav-item
+                        a.nav-link.active(href="#body" data-toggle="tab" role="tab")
+                            | Body
+
+                    li.nav-item
+                        a.nav-link(href="#breast" data-toggle="tab" role="tab")
+                            | Breast
+
+                    li.nav-item
+                        a.nav-link(href="#face" data-toggle="tab" role="tab")
+                            | Face
+
+                    li.nav-item
+                        a.nav-link(href="#mens" data-toggle="tab" role="tab")
+                            | Mens
+        
+        .tab-content
+            #body.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="tab-link-0")
+                +swiper
+            
+            #breast.tab-pane.fade(role="tabpanel" aria-labelledby="tab-link-1")
+                +swiper
+            
+            #face.tab-pane.fade(role="tabpanel" aria-labelledby="tab-link-2")
+                +swiper
+
+            #mens.tab-pane.fade(role="tabpanel" aria-labelledby="tab-link-3")
+                +swiper

@@ -1,0 +1,16 @@
+mixin head(data)
+    title= data.title
+    meta(charset="UTF-8")
+
+    meta(content=data.description name="description")
+
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="HandheldFriendly" content="true")
+    meta(name="format-detection" content="telephone=no")
+    meta(content="IE=edge" http-equiv="X-UA-Compatible")
+    
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+    link(rel="stylesheet" type="text/css" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css")
+
+    link(rel="stylesheet" href="main.css")
