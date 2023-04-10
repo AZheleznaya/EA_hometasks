@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "../base/mixins";
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .section__services {
   position: relative;
@@ -68,7 +68,7 @@
     }
 
     .article__description {
-      max-height: 400px;
+      max-height: 310px;
       margin-right: 30px;
       padding-right: 10px;
       color: $deeplBlue-60;

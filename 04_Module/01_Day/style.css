@@ -5989,6 +5989,7 @@ p + p {
 .section__commitment .col-xxl-4 .card__description {
   max-height: 200px;
   width: 100%;
+  margin-right: -10px;
   padding-right: 10px;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -6133,7 +6134,7 @@ p + p {
   }
 }
 .section__services .services__article .article__description {
-  max-height: 400px;
+  max-height: 310px;
   margin-right: 30px;
   padding-right: 10px;
   color: rgba(15, 15, 40, 0.6);
@@ -6587,7 +6588,9 @@ p + p {
   max-width: 224px;
   width: 100%;
   max-height: 110px;
-  margin: 0 auto;
+  height: 100%;
+  margin-right: -10px;
+  padding-right: 10px;
   font-family: "Geometria", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -6611,7 +6614,7 @@ p + p {
 .section__surgeons .surgeons .col-md-4 .surgeon__image .surgeon-overlay__text,
 .section__surgeons .surgeons .col-xl-3 .surgeon__image .surgeon-overlay__text {
     max-width: 224px;
-    max-height: 100px;
+    max-height: 110px;
   }
 }
 .section__surgeons .surgeons .button {
@@ -6809,18 +6812,8 @@ p + p {
   }
 }
 .section__lorem .lorem__paragraph .paragraph__description {
-  font-family: "Geometria", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
   color: rgba(15, 15, 40, 0.6);
-}
-@media (max-width: 1280px) {
-  .section__lorem .lorem__paragraph .paragraph__description {
-    font-size: 16px;
-    line-height: 22px;
-  }
+  padding-bottom: 30px;
 }
 .section__lorem .lorem__paragraph .paragraph__description .very-long-link {
   color: #C9AB63;
@@ -6847,7 +6840,7 @@ p + p {
   }
 }
 .section__lorem .lorem__paragraph .paragraph__button {
-  margin-top: 44px;
+  margin-top: 14px;
   display: block;
   padding: 24px 28px 20px;
   font-family: "Geometria", sans-serif;
@@ -6867,12 +6860,11 @@ p + p {
 }
 @media (max-width: 1280px) {
   .section__lorem .lorem__paragraph .paragraph__button {
-    margin-top: 32px;
+    margin-top: 2px;
   }
 }
 @media (max-width: 768px) {
   .section__lorem .lorem__paragraph .paragraph__button {
-    margin-top: 24px;
     padding: 16px 28px 12px;
     font-size: 14px;
     line-height: 14px;
@@ -7199,7 +7191,7 @@ p + p {
   background: #E9DDC1;
 }
 .section__faq .faq-content {
-  padding: 56px 56px 0;
+  padding: 56px 56px;
   height: 100%;
   background: #C9AB63;
 }
@@ -7230,13 +7222,22 @@ p + p {
   }
 }
 .section__faq .faq-content__answer {
-  padding-top: 20px;
+  max-height: 300px;
+  height: 100%;
+  margin-top: 20px;
+  margin-right: -10px;
+  padding-right: 10px;
   font-family: "Geometria", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
   color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 1280px) {
+  .section__faq .faq-content__answer {
+    max-height: 200px;
+  }
 }
 @media (max-width: 1025px) {
   .section__faq .faq-content__answer {
@@ -7246,23 +7247,9 @@ p + p {
 }
 @media (max-width: 768px) {
   .section__faq .faq-content__answer {
-    padding-top: 18px;
+    margin-top: 18px;
     font-size: 14px;
     line-height: 20px;
-  }
-}
-.section__faq .faq-content__answer .answer-text {
-  display: inline-block;
-}
-.section__faq .faq-content__answer .answer-list {
-  display: inline-block;
-  padding-top: 20px;
-  margin-bottom: 0;
-  list-style-type: disc;
-}
-@media (max-width: 768px) {
-  .section__faq .faq-content__answer .answer-list {
-    padding-top: 16px;
   }
 }
 

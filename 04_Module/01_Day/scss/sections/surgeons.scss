@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "../base/mixins";
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .section__surgeons {
   padding: 62px 0;
@@ -163,7 +163,9 @@
             max-width: 224px;
             width: 100%;
             max-height: 110px;
-            margin: 0 auto;
+            height: 100%;
+            margin-right: -10px;
+            padding-right: 10px;
             @include geometria-normal-400;
             @include fs-18-lh-18;
             text-align: center;
@@ -177,7 +179,7 @@
 
             @media(max-width: $media-breakpoints-md) {
               max-width: 224px;
-              max-height: 100px;
+              max-height: 110px;
             }
           }
         }
