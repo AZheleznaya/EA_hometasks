@@ -73,6 +73,7 @@
         height: 0;
         padding-top: calc(520 / 343 * 100%);
         border-bottom: 4px solid #C9AB63;
+        cursor: pointer;
 
         @media (max-width: $media-breakpoints-lg) {
           padding-top: calc(340 / 227 * 100%);

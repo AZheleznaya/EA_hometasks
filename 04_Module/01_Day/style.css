@@ -6449,6 +6449,7 @@ p + p {
   height: 0;
   padding-top: 151.6034985423%;
   border-bottom: 4px solid #C9AB63;
+  cursor: pointer;
 }
 @media (max-width: 1025px) {
   .section__surgeons .surgeons .col-12 .surgeon__image,
