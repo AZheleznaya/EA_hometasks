@@ -1,0 +1,347 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.header {
+  min-width: 296px;
+  width: 296px;
+  background-color: $deepBlue;
+
+  @media (max-width: $media-breakpoints-xxl) {
+    position: sticky;
+    @include flex-center-center;
+    top: 0;
+    left: 0;
+    min-height: 100px;
+    min-width: 100%;
+    width: 100%;
+    z-index: 3;
+  }
+
+  @media (max-width: $media-breakpoints-md) {
+    min-height: 80px;
+  }
+
+  .header__desktop {
+    position: fixed;
+    @include height-100vh;
+    min-width: 296px;
+    width: 296px;
+    background-color: $deepBlue;
+
+    @media (max-width: $media-breakpoints-xxl) {
+      left: -296px;
+    }
+
+    &.active {
+      top: 0;
+      left: 0;
+      background-color: $deepBlue;
+      z-index: 10;
+      transition: all 0.5s ease;
+    }
+
+    .header-scrollbar {
+      max-width: 100%;
+      @include max-height;
+      overflow-y: auto;
+
+      .header__desktop-content {
+        display: flex;
+        flex-direction: column;
+        @include height-100vh;
+
+        .header-logo {
+          padding: 57px 18px 30px;
+          width: 296px;
+          @include flex-center;
+
+          @media(max-width: $media-breakpoints-xxl) {
+            padding-left: 33px;
+            padding-right: 33px;
+          }
+
+          @media(max-width: $media-breakpoints-sm) {
+            padding-left: 43px;
+            padding-right: 43px
+          }
+
+          &__image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            transition: all 0.5s ease;
+
+            @media (pointer: coarse) {
+              &:active {
+                transform: scale(0.9);
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                transform: scale(0.9);
+                transition: all 0.5s ease;
+              }
+            }
+          }
+        }
+
+        .header-menu {
+          margin: auto 0;
+
+          .menu {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+
+            &__item {
+              padding-top: 8px;
+              padding-bottom: 8px;
+
+              &-link {
+                padding-left: 56px;
+                padding-right: 38px;
+                @include geometria-normal-500;
+                @include fs-20-lh-20;
+                color: $white;
+
+                @media(max-width: $media-breakpoints-sm) {
+                  @include fs-16-lh-16;
+                }
+
+                @media (pointer: coarse) {
+                  &:active {
+                    color: $gold;
+                    transition: all 0.1s ease;
+                  }
+                }
+
+                @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+                  &:hover,
+                  &:focus {
+                    color: $gold;
+                    transition: all 0.3s ease;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .header-button {
+          padding: 30px 56px 36px;
+          width: 296px;
+
+          @media(max-width: $media-breakpoints-xxl) {
+            padding-left: 56px;
+            padding-right: 56px;
+          }
+
+          &__phone {
+            display: inline-block;
+            padding: 18px 0 14px;
+            width: 100%;
+            @include geometria-normal-700;
+            @include fs-16-lh-16;
+            @include center-uppercase;
+            color: $white;
+            border: 2px solid $gold;
+            transition: all 0.5s ease;
+
+            @media (pointer: coarse) {
+              &:active {
+                background: $gold;
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                background: $gold;
+                transition: all 0.5s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header__close {
+    display: none;
+
+    &.active {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      padding-top: 12px;
+      padding-right: 12px;
+      min-width: 360px;
+      @include height-100vh;
+      background: $deepBlue-80;
+      backdrop-filter: blur(4px);
+
+      .header__close-icon {
+        position: absolute;
+        display: block;
+        padding-bottom: 5px;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        background: inherit;
+        border: 2px solid $gold;
+        text-align: center;
+        z-index: 10;
+        transition: all 0.5s ease;
+
+        @media(pointer: coarse) {
+          &:active {
+            transform: scale(0.9);
+            transition: all 0.1s ease;
+          }
+        }
+
+        @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+          &:hover,
+          &:focus {
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+  }
+
+  .header__mobile {
+    visibility: hidden;
+
+    @media (max-width: $media-breakpoints-xxl) {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 4;
+      @include width-100vw;
+      min-width: 360px;
+      visibility: visible;
+    }
+
+    &-content {
+      padding: 12px 40px;
+      @include flex-space-between-center;
+
+      @media (max-width: $media-breakpoints-md) {
+        padding: 18px 20px;
+      }
+
+      .mobile-menu {
+        width: 45px;
+        height: 30px;
+        background: $deepBlue;
+        transition: all 0.5s ease;
+
+        @media (pointer: coarse) {
+          &:active {
+            transform: scale(1.1);
+            transition: all 0.1s ease;
+          }
+        }
+
+        @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+          &:hover,
+          &:focus {
+            transform: scale(1.1);
+            transition: all 0.5s ease;
+          }
+        }
+      }
+
+      .mobile-logo {
+        width: 190px;
+
+        @media (max-width: $media-breakpoints-md) {
+          width: 110px;
+        }
+
+        .logo__image {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          transition: all 0.5s ease;
+
+          @media (pointer: coarse) {
+            &:active {
+              transform: scale(0.9);
+              transition: all 0.1s ease;
+            }
+          }
+
+          @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+            &:hover,
+            &:focus {
+              transform: scale(0.9);
+              transition: all 0.5s ease;
+            }
+          }
+        }
+      }
+
+      .mobile-button {
+        @media (max-width: $media-breakpoints-md) {
+          display: block;
+          width: 36px;
+          height: 36px;
+          border: 2px solid $gold;
+        }
+
+        &__phone {
+          padding: 18px 31px;
+          @include geometria-normal-700;
+          @include fs-16-lh-16;
+          @include center-uppercase;
+          color: $white;
+          border: 2px solid $gold;
+          transition: all 0.5s ease;
+
+          @media (max-width: $media-breakpoints-md) {
+            display: none;
+          }
+
+          @media (pointer: coarse) {
+            &:active {
+              background: $gold;
+              transition: all 0.1s ease;
+            }
+          }
+
+          @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+            &:hover,
+            &:focus {
+              background: $gold;
+              transition: all 0.5s ease;
+            }
+          }
+        }
+
+        &__icon {
+          display: none;
+
+          @media (max-width: $media-breakpoints-md) {
+            display: block;
+            padding-top: 2px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>WordPress</title>
+    <script src="js/preloader.js"></script>
+    <style>
+        .preloader {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #0F0F28;
+            z-index: 10;
+        }
+
+        .preloader__circle {
+            width: 16vmax;
+            height: 16vmax;
+            border-right: 8px solid #C9AB63;
+            border-radius: 100%;
+            animation: spinRight 1s linear infinite;
+        }
+
+        .preloader__circle::after,
+        .preloader__circle::before {
+            content: '';
+            width: 14vmax;
+            height: 14vmax;
+            display: block;
+            position: absolute;
+            top: calc(50% - 7vmax);
+            left: calc(50% - 7vmax);
+            border-left: 7px solid #C9AB63;
+            border-radius: 100%;
+            animation: spinLeft 1s linear infinite;
+        }
+
+        .preloader__circle::after {
+            width: 12vmax;
+            height: 12vmax;
+            top: calc(50% - 6vmax);
+            left: calc(50% - 6vmax);
+            border: 0;
+            border-right: 6px solid #C9AB63;
+            animation: none;
+        }
+
+        .preloader.hidden {
+            display: none;
+        }
+
+        @keyframes spinLeft {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(720deg);}
+        }
+
+        @keyframes spinRight {
+            from {transform:rotate(360deg);}
+            to {transform:rotate(0deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="preloader__circle"></div>
+    </div>
+
+    <header class="header">
+        <div class="header__desktop">
+            <div class="header-scrollbar">
+                <div class="header__desktop-content">
+                    <a class="header-logo" href="javascript:void(0);" target="_blank">
+                        <img class="header-logo__image" src="assets/images/a-logo.svg" alt="logo">
+                    </a>
+                    <div class="header-menu">
+                        <ul class="menu">
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Home</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">About Us</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Locations</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">I’m New</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Procedures</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Before and After</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Testimonials</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Resources</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Financing</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__item-link" href="javascript:void(0);">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-button">
+                        <a class="header-button__phone" href="tel:+4047375803" role="button">(404) 737-5803</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__close">
+            <button class="header__close-icon">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.72659 0.333496L4.99992 4.06016L1.27325 0.333496L0.333252 1.2735L4.05992 5.00016L0.333252 8.72683L1.27325 9.66683L4.99992 5.94016L8.72659 9.66683L9.66659 8.72683L5.93992 5.00016L9.66659 1.2735L8.72659 0.333496Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+        <div class="header__mobile">
+            <div class="header__mobile-content">
+                <button class="mobile-menu">
+                    <svg viewBox="0 0 45 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 30H30V25H0V30ZM0 17.5H45V12.5H0V17.5ZM0 5H30V0H0V5Z" fill="#C9AB63"/>
+                    </svg>
+                </button>
+                <a class="mobile-logo" href="javascript:void(0);" target="_blank">
+                    <img class="logo__image" src="assets/images/a-logo.svg" alt="logo">
+                </a>
+                <a class="mobile-button" href="tel:+44047375803" role="button">
+                    <span class="mobile-button__phone">(404) 737-5803</span>
+                    <span class="mobile-button__icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.6667 11.2802V13.2802C14.6675 13.4659 14.6294 13.6497 14.555 13.8198C14.4807 13.9899 14.3716 14.1426 14.2348 14.2681C14.0979 14.3937 13.9364 14.4892 13.7605 14.5487C13.5847 14.6082 13.3983 14.6303 13.2134 14.6136C11.1619 14.3907 9.19137 13.6897 7.46004 12.5669C5.84926 11.5433 4.48359 10.1777 3.46004 8.56689C2.33336 6.8277 1.6322 4.84756 1.41337 2.78689C1.39671 2.60254 1.41862 2.41673 1.4777 2.24131C1.53679 2.06589 1.63175 1.90469 1.75655 1.76797C1.88134 1.63126 2.03324 1.52203 2.20256 1.44724C2.37189 1.37245 2.55493 1.33374 2.74004 1.33356H4.74004C5.06357 1.33038 5.37723 1.44495 5.62254 1.65592C5.86786 1.86689 6.02809 2.15986 6.07337 2.48023C6.15779 3.12027 6.31434 3.74871 6.54004 4.35356C6.62973 4.59218 6.64915 4.8515 6.59597 5.10081C6.5428 5.35012 6.41928 5.57897 6.24004 5.76023L5.39337 6.60689C6.34241 8.27592 7.72434 9.65786 9.39337 10.6069L10.24 9.76023C10.4213 9.58099 10.6501 9.45746 10.8995 9.40429C11.1488 9.35112 11.4081 9.37053 11.6467 9.46023C12.2516 9.68593 12.88 9.84248 13.52 9.9269C13.8439 9.97258 14.1396 10.1357 14.3511 10.3852C14.5625 10.6348 14.6748 10.9533 14.6667 11.2802Z" fill="white"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-main">
+        <div class="main">
+
+            <section class="section__hero">
+                <div class="hero__content">
+                    <div class="container">
+                        <h1 class="hero__content-title">State of the art surgery center</h1>
+                        <div class="hero__content-text">Achieve your most beautiful self</div>
+                        <h5 class="hero__content-subtitle">Schedule complimentary Cosmetic Consultation</h5>
+                        <button class="button hero__content-button" type="button" data-toggle="modal" data-target="#staticBackdrop">
+                            Schedule now
+                        </button>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Lorem</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary">Agree</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section__commitment">
+                <div class="container">
+                    <div class="commitment-title">
+                        <h1>The Advanced Commitment</h1>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-lg-10 col-xl-6 col-xxl-4 ">
+                            <div class="card">
+                                <div class="card__image">
+                                    <lottie-player class="image-lottie" src="https://lottie.host/ba39c2ee-c890-4d68-9309-88ea3b855b6e/zCMVnglzix.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                                </div>
+                                <div class="card__title">
+                                    <h4>Patient-Focused Care</h4>
+                                </div>
+                                <div class="card__description">
+                                    <p class="text-content">
+                                        Our mission is to help our Texas patients choose the right treatments to achieve their goals, deliver a comfortable and rewarding treatment experience, and restore your confidence by producing consistently dramatic, natural-looking, and stunning results.
+                                    </p>
+                                    <p class="text-content">
+                                        Our mission is to help our Texas patients choose the right treatments to achieve their goals, deliver a comfortable and rewarding treatment experience, and restore your confidence by producing consistently dramatic, natural-looking, and stunning results.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10 col-xl-6 col-xxl-4 ">
+                            <div class="card">
+                                <div class="card__image">
+                                    <lottie-player class="image-lottie" src="https://lottie.host/aa49eb27-704b-418d-8995-4f69202b7d3f/9UFhTSrwLR.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                                </div>
+                                <div class="card__title">
+                                    <h4>Fully Accredited Surgical Center</h4>
+                                </div>
+                                <div class="card__description">
+                                    <p class="text-content">
+                                        Our private, state-of-the-art surgical suite meets the highest safety standards in the industry and is accredited by the American Association for Accreditation of Ambulatory Surgery Facilities (AAAASF).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10 col-xl-6 col-xxl-4 ">
+                            <div class="card">
+                                <div class="card__image">
+                                    <lottie-player class="image-lottie" src="https://lottie.host/b590dff2-6bac-4f24-accf-5171753092ea/UO1IZwHfGG.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                                </div>
+                                <div class="card__title">
+                                    <h4>Advanced Technology</h4>
+                                </div>
+                                <div class="card__description">
+                                    <p class="text-content">
+                                        Our surgeon uses the latest technology and state-of-the-art techniques so we can produce the best possible results. From the full range of breast implant options to non-invasive injectable treatments, we can enhance your appearance safely and comfortably.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section__services">
+                <div class="container">
+                    <div class="services">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-xl-6">
+                                <div class="services__article">
+                                    <div class="article__subtitle">
+                                        <h4>OUR PROCEDURES</h4>
+                                    </div>
+                                    <div class="article__title">
+                                        <h2>What We Offer</h2>
+                                    </div>
+                                    <div class="article__description">
+                                        <p class="text-content">
+                                            Our surgeons include Dr. Paul Feldman, Dr. Edward Gronka, Dr. Joseph Raniere, and Dr. Joel Stewart – all of whom are Board Certified plastic surgeons.
+                                        </p>
+                                        <p class="text-content">
+                                            Each of our surgeons uphold the highest level of patient care and support the vision to provide the Atlanta community with a facility where they can achieve their aesthetic goals. Many of our procedures can even be combined together in order to help you save money and ease recovery time – we’re here to provide treatment in a way that suits you in the most efficient way possible.
+                                        </p>
+                                        <p class="text-content">
+                                            We offer a variety of face, breast and body procedures that include:
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div class="services__tab">
+                                    <div class="tabs">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#body-services" data-toggle="tab" role="tab">
+                                                    Body
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#breast-services" data-toggle="tab" role="tab">
+                                                    Breast
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#face-services" data-toggle="tab" role="tab">
+                                                    Face
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#mens-services" data-toggle="tab" role="tab">
+                                                    Mens
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#body-services" data-toggle="tab" role="tab">
+                                                    Body
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#breast-services" data-toggle="tab" role="tab">
+                                                    Breast
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#face-services" data-toggle="tab" role="tab">
+                                                    Face
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#mens-services" data-toggle="tab" role="tab">
+                                                    Mens
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#body-services" data-toggle="tab" role="tab">
+                                                    Body
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="body-services">
+                                            <div class="row">
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-xxl-4">
+                                                    <span class="tab__name">Service-body</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="breast-services">
+                                            <div class="row">
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-breast</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="face-services">
+                                            <div class="row">
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-face</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="mens-services">
+                                            <div class="row">
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                                <div class="col-6 col-md-4 col-lg-6 col-xl-4">
+                                                    <span class="tab__name">Service-mens</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section__surgeons">
+                <div class="container">
+                    <div class="surgeons">
+                        <div class="surgeons__subtitle">
+                            <h4>OUR SURGEONS</h4>
+                        </div>
+                        <div class="surgeons__title">
+                            <h1>Who We Are</h1>
+                        </div>
+                        <div class="surgeons__description">
+                            <p class="description__text">
+                                We have over 45 years of combined experience working with individuals who wish to enhance their bodies.
+                            </p>
+                        </div>
+                        <div class="row justify-content-center row-surgeons">
+                            <div class="col-12 col-md-4 col-lg-3 col-xl-3">
+                                <div class="surgeon__image">
+                                    <img src="assets/images/surgeon-1.png" alt="surgeon-image">
+                                    <div class="surgeon-overlay">
+                                        <h4 class="surgeon-overlay__title">Dr. Edward S. Gronka</h4>
+                                        <div class="surgeon-overlay__arrow">
+                                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <p class="surgeon-overlay__text">
+                                            Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 col-xl-3">
+                                <div class="surgeon__image">
+                                    <img src="assets/images/surgeon-1.png" alt="surgeon-image">
+                                    <div class="surgeon-overlay">
+                                        <h4 class="surgeon-overlay__title">Dr. Joseph Raniere, Jr.</h4>
+                                        <div class="surgeon-overlay__arrow">
+                                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <p class="surgeon-overlay__text">
+                                            Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-lg-3 col-xl-3">
+                                <div class="surgeon__image">
+                                    <img src="assets/images/surgeon-1.png" alt="surgeon-image">
+                                    <div class="surgeon-overlay">
+                                        <h4 class="surgeon-overlay__title">Dr. Joel Melford Stewart, Jr.</h4>
+                                        <div class="surgeon-overlay__arrow">
+                                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <p class="surgeon-overlay__text">
+                                            Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapse-surgeons">
+                            <div class="row justify-content-center row-surgeons">
+                                <div class="col-12 col-md-4 col-xl-3">
+                                    <div class="surgeon__image">
+                                        <img src="assets/images/surgeon-2.png" alt="surgeon-image">
+                                        <div class="surgeon-overlay">
+                                            <h4 class="surgeon-overlay__title">Dr. Edward S. Gronka</h4>
+                                            <div class="surgeon-overlay__arrow">
+                                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <p class="surgeon-overlay__text">
+                                                Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-xl-3">
+                                    <div class="surgeon__image">
+                                        <img src="assets/images/surgeon-2.png" alt="surgeon-image">
+                                        <div class="surgeon-overlay">
+                                            <h4 class="surgeon-overlay__title">Dr. Edward S. Gronka</h4>
+                                            <div class="surgeon-overlay__arrow">
+                                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <p class="surgeon-overlay__text">
+                                                Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-xl-3">
+                                    <div class="surgeon__image">
+                                        <img src="assets/images/surgeon-2.png" alt="surgeon-image">
+                                        <div class="surgeon-overlay">
+                                            <h4 class="surgeon-overlay__title">Dr. Edward S. Gronka</h4>
+                                            <div class="surgeon-overlay__arrow">
+                                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13 7L7 1L1 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <p class="surgeon-overlay__text">
+                                                Tincidunt eget blandit velit a, ultrices diam. At ut enim, sapien turpis. Augue velit neque elementum dolor aliquam.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button"
+                                data-target="#collapse-surgeons"
+                                data-toggle="collapse"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapse-surgeons"
+                        >
+                            Learn more
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="section__lorem">
+                <div class="container">
+                    <div class="lorem">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="lorem__image">
+                                    <img src="assets/images/lorem-image.png" alt="lorem-image">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 align-self-center">
+                                <div class="lorem__paragraph">
+                                    <div class="paragraph__title">
+                                        <h2>Lorem ipsum</h2>
+                                    </div>
+                                    <div class="paragraph__description">
+                                        <span class="description__text">
+                                            The plastic surgeons of Advanced Aesthetics have years of experience performing facial cosmetic surgery in Atlanta.
+                                            <a class="very-long-link" href="javascript:void(0);">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                            </a>
+                                            They are renowned throughout the state for their expertise. If you would like to take years off your appearance and start looking and feeling youthful again, please feel free to browse through our list of procedures to see how we can help you realize your dream.
+                                        </span>
+                                    </div>
+                                    <div class="collapse" id="collapse-lorem">
+                                        <div class="paragraph__description">
+                                            <span class="description__text">
+                                                The plastic surgeons of Advanced Aesthetics have years of experience performing facial cosmetic surgery in Atlanta. They are renowned throughout the state for their expertise. If you would like to take years off your appearance and start looking and feeling youthful again, please feel free to browse through our list of procedures to see how we can help you realize your dream.
+                                            </span>
+                                        </div>
+                                        <div class="paragraph__description">
+                                            <span class="description__text">
+                                                The plastic surgeons of Advanced Aesthetics have years of experience performing facial cosmetic surgery in Atlanta. They are renowned throughout the state for their expertise. If you would like to take years off your appearance and start looking and feeling youthful again, please feel free to browse through our list of procedures to see how we can help you realize your dream.
+                                            </span>
+                                        </div>
+                                        <div class="paragraph__description">
+                                            <span class="description__text">
+                                                The plastic surgeons of Advanced Aesthetics have years of experience performing facial cosmetic surgery in Atlanta. They are renowned throughout the state for their expertise. If you would like to take years off your appearance and start looking and feeling youthful again, please feel free to browse through our list of procedures to see how we can help you realize your dream.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <button class="paragraph__button"
+                                            data-target="#collapse-lorem"
+                                            data-toggle="collapse"
+                                            role="button"
+                                            aria-expanded="false"
+                                            aria-controls="collapse-lorem"
+                                    >
+                                        Learn more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section__faq">
+                <div class="container">
+                    <div class="faq__title">
+                        <h2>FAQ</h2>
+                    </div>
+                    <div class="faq-tabs">
+                        <div class="row">
+                            <div class="col-12 col-xl-6">
+                                <ul class="nav nav-tabs faq-tabs__list" role="tablist">
+                                    <li class="faq-tabs__point">
+                                        <a class="point-link active"
+                                           id="link-tab-1"
+                                           href="#tab-1"
+                                           data-toggle="tab"
+                                           role="tab"
+                                           aria-controls="tab-1"
+                                           aria-selected="true"
+                                        >
+                                            How can I prepare for my procedure?
+                                        </a>
+                                    </li>
+                                    <li class="faq-tabs__point">
+                                        <a class="point-link"
+                                           id="link-tab-2"
+                                           href="#tab-2"
+                                           data-toggle="tab"
+                                           role="tab"
+                                           aria-controls="tab-2"
+                                           aria-selected="false"
+                                        >
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.?
+                                        </a>
+                                    </li>
+                                    <li class="faq-tabs__point">
+                                        <a class="point-link"
+                                           id="link-tab-3"
+                                           href="#tab-3"
+                                           data-toggle="tab"
+                                           role="tab"
+                                           aria-controls="tab-3"
+                                           aria-selected="false"
+                                        >
+                                            Nibh in maecenas interdum magna?
+                                        </a>
+                                    </li>
+                                    <li class="faq-tabs__point">
+                                        <a class="point-link"
+                                           id="link-tab-4"
+                                           href="#tab-4"
+                                           data-toggle="tab"
+                                           role="tab"
+                                           aria-controls="tab-4"
+                                           aria-selected="false"
+                                        >
+                                            Facilisis volutpat porttitor lorem orci?
+                                        </a>
+                                    </li>
+                                    <li class="faq-tabs__point">
+                                        <a class="point-link"
+                                           id="link-tab-5"
+                                           href="#tab-5"
+                                           data-toggle="tab"
+                                           role="tab"
+                                           aria-controls="tab-5"
+                                           aria-selected="false"
+                                        >
+                                            Diam non eu sagittis ipsum, donec dictumst sagittis nunc, viverra amet, cursus?
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="faq-tab-1">
+                                        <div class="faq-content">
+                                            <div class="faq-content__question">
+                                                <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                            </div>
+                                            <div class="faq-content__answer">
+                                                <span class="answer-text">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </span>
+                                                <ul class="answer-list">
+                                                    <li class="answer-list__item">
+                                                        Ask the office staff for an application.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Complete the application form.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Return it to the office staff for processing.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        When approved, contact the office to schedule your care.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="faq-tab-2">
+                                        <div class="faq-content">
+                                            <div class="faq-content__question">
+                                                <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                            </div>
+                                            <div class="faq-content__answer">
+                                                <span class="answer-text">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="faq-tab-3">
+                                        <div class="faq-content">
+                                            <div class="faq-content__question">
+                                                <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                            </div>
+                                            <div class="faq-content__answer">
+                                                <span class="answer-text">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </span>
+                                                <ul class="answer-list">
+                                                    <li class="answer-list__item">
+                                                        Ask the office staff for an application.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Complete the application form.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Return it to the office staff for processing.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        When approved, contact the office to schedule your care.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="faq-tab-4">
+                                        <div class="faq-content">
+                                            <div class="faq-content__question">
+                                                <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                            </div>
+                                            <div class="faq-content__answer">
+                                                <span class="answer-text">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-5" role="tabpanel" aria-labelledby="faq-tab-5">
+                                        <div class="faq-content">
+                                            <div class="faq-content__question">
+                                                <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                            </div>
+                                            <div class="faq-content__answer">
+                                                <span class="answer-text">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                </span>
+                                                <ul class="answer-list">
+                                                    <li class="answer-list__item">
+                                                        Ask the office staff for an application.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Complete the application form.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        Return it to the office staff for processing.
+                                                    </li>
+                                                    <li class="answer-list__item">
+                                                        When approved, contact the office to schedule your care.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-collapse" id="collapseBlock">
+                        <div class="faq-collapse__item">
+                            <a class="collapse-link"
+                               id="link-collapse-1"
+                               href="#collapse-1"
+                               data-toggle="collapse"
+                               aria-controls="collapse-1"
+                               aria-expanded="true"
+                            >
+                                How can I prepare for my procedure?
+                            </a>
+                            <div class="collapse show" id="collapse-1" aria-labelledby="link-collapse-1" data-parent="#collapseBlock">
+                                <div class="faq-content">
+                                    <div class="faq-content__question">
+                                        <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                    </div>
+                                    <div class="faq-content__answer">
+                                        <span class="answer-text">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        </span>
+                                        <ul class="answer-list">
+                                            <li class="answer-list__item">
+                                                Ask the office staff for an application.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Complete the application form.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Return it to the office staff for processing.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                When approved, contact the office to schedule your care.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-collapse__item">
+                            <a class="collapse-link collapsed"
+                               id="link-collapse-2"
+                               href="#collapse-2"
+                               data-toggle="collapse"
+                               aria-controls="collapse-2"
+                               aria-expanded="false"
+                            >
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.?
+                            </a>
+                            <div class="collapse" id="collapse-2" aria-labelledby="link-collapse-2" data-parent="#collapseBlock">
+                                <div class="faq-content">
+                                    <div class="faq-content__question">
+                                        <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                    </div>
+                                    <div class="faq-content__answer">
+                                        <span class="answer-text">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-collapse__item">
+                            <a class="collapse-link collapsed"
+                               id="link-collapse-3"
+                               href="#collapse-3"
+                               data-toggle="collapse"
+                               aria-controls="collapse-3"
+                               aria-expanded="false"
+                            >
+                                Nibh in maecenas interdum magna?
+                            </a>
+                            <div class="collapse" id="collapse-3" aria-labelledby="link-collapse-3" data-parent="#collapseBlock">
+                                <div class="faq-content">
+                                    <div class="faq-content__question">
+                                        <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                    </div>
+                                    <div class="faq-content__answer">
+                                        <span class="answer-text">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        </span>
+                                        <ul class="answer-list">
+                                            <li class="answer-list__item">
+                                                Ask the office staff for an application.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Complete the application form.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Return it to the office staff for processing.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                When approved, contact the office to schedule your care.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-collapse__item">
+                            <a class="collapse-link collapsed"
+                               id="link-collapse-4"
+                               href="#collapse-4"
+                               data-toggle="collapse"
+                               aria-controls="collapse-4"
+                               aria-expanded="false"
+                            >
+                                Facilisis volutpat porttitor lorem orci?
+                            </a>
+                            <div class="collapse" id="collapse-4" aria-labelledby="link-collapse-4" data-parent="#collapseBlock">
+                                <div class="faq-content">
+                                    <div class="faq-content__question">
+                                        <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                    </div>
+                                    <div class="faq-content__answer">
+                                        <span class="answer-text">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-collapse__item">
+                            <a class="collapse-link collapsed"
+                               id="link-collapse-5"
+                               href="#collapse-5"
+                               data-toggle="collapse"
+                               aria-controls="collapse-5"
+                               aria-expanded="false"
+                            >
+                                Diam non eu sagittis ipsum, donec dictumst sagittis nunc, viverra amet, cursus?
+                            </a>
+                            <div class="collapse" id="collapse-5" aria-labelledby="link-collapse-5" data-parent="#collapseBlock">
+                                <div class="faq-content">
+                                    <div class="faq-content__question">
+                                        <h4>Lorem ipsum dolor sit amet, consectetur?</h4>
+                                    </div>
+                                    <div class="faq-content__answer">
+                                        <span class="answer-text">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                        </span>
+                                        <ul class="answer-list">
+                                            <li class="answer-list__item">
+                                                Ask the office staff for an application.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Complete the application form.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                Return it to the office staff for processing.
+                                            </li>
+                                            <li class="answer-list__item">
+                                                When approved, contact the office to schedule your care.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section__gallery">
+                <div class="container">
+                    <div class="gallery-title">
+                        <h1>Medical centers</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="gallery-list">
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-1.jpeg" alt="image">
+                                        <span class="item-name">Medical center 1</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-2.jpeg" alt="image">
+                                        <span class="item-name">Medical center 2</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-3.jpeg" alt="image">
+                                        <span class="item-name">Medical center 3</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-4.jpeg" alt="image">
+                                        <span class="item-name">Medical center 4</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-5.jpeg" alt="image">
+                                        <span class="item-name">Medical center 5</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-6.jpeg" alt="image">
+                                        <span class="item-name">Medical center 6</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-7.jpg" alt="image">
+                                        <span class="item-name">Medical center 7</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-8.jpeg" alt="image">
+                                        <span class="item-name">Medical center 8</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-9.jpeg" alt="image">
+                                        <span class="item-name">Medical center 9</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-9.jpeg" alt="image">
+                                        <span class="item-name">Medical center 9</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-9.jpeg" alt="image">
+                                        <span class="item-name">Medical center 9</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-9.jpeg" alt="image">
+                                        <span class="item-name">Medical center 9</span>
+                                    </a>
+                                </div>
+                                <div class="gallery-list__item">
+                                    <a class="gallery-list__item gallery-list__item_image"
+                                       href="javascript:void(0);"
+                                       data-toggle="modal"
+                                       data-target="#medical-centers"
+                                    >
+                                        <img src="assets/images/img-9.jpeg" alt="image">
+                                        <span class="item-name">Medical center 9</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="modal fade" id="medical-centers" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Medical Centers</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carouselControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/images/img-1.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-2.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-3.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-4.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-5.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-6.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-7.jpg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-8.jpeg" alt="image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/images/img-9.jpeg" alt="image">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="js/horizontal-scroll.js"></script>
+</body>
+</html>

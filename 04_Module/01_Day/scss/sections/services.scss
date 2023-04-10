@@ -1,0 +1,222 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.section__services {
+  position: relative;
+  padding: 0 0 186px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: calc(50% - 350px / 2);
+    bottom: 62px;
+    width: 350px;
+    height: 2px;
+    background: $gold;
+
+    @media (max-width: $media-breakpoints-lg) {
+      bottom: 0;
+      right: calc(50% - 220px / 2);
+      width: 220px;
+    }
+  }
+
+  @media (max-width: $media-breakpoints-lg) {
+    padding: 0 0 50px;
+  }
+
+  @media (max-width: $media-breakpoints-md) {
+    padding: 0 0 40px;
+  }
+
+  .services__article {
+    padding-left: 24px;
+    margin-top: 158px;
+    border-left: 2px solid $gold;
+
+    @media (max-width: $media-breakpoints-xl) {
+      margin-top: 0;
+    }
+
+    .article__subtitle {
+      @include geometria-normal-700;
+      @include fs-16-lh-16;
+      color: $gold;
+      text-transform: uppercase;
+
+      @media (max-width: $media-breakpoints-md) {
+        @include fs-14-lh-14;
+      }
+    }
+
+    .article__title {
+      padding: 16px 0 32px;
+      @include geometria-normal-400;
+      @include fs-50-lh-50;
+      color: $deepBlue;
+      text-transform: uppercase;
+
+      @media (max-width: $media-breakpoints-lg) {
+        padding: 8px 0 24px;
+        @include fs-44-lh-44;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        padding: 8px 0 40px;
+        @include fs-32-lh-32;
+      }
+    }
+
+    .article__description {
+      max-height: 400px;
+      margin-right: 30px;
+      padding-right: 10px;
+      color: $deeplBlue-60;
+
+      @media (max-width: 1279px) {
+        max-height: 242px;
+        margin-right: 0;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        max-height: 480px;
+      }
+    }
+  }
+
+  .services__tab {
+    margin-top: 62px;
+
+    @media (max-width: $media-breakpoints-xl) {
+      margin-top: 40px;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      margin-top: 40px;
+    }
+
+    .tabs {
+      max-width: 100%;
+      height: 26px;
+      text-align: center;
+      line-height: 0;
+      cursor: pointer;
+
+      @media (max-width: $media-breakpoints-lg) {
+        height: 24px;
+      }
+
+      .nav {
+        position: relative;
+        margin: 0 auto -32px;
+        padding: 0 0 42px;
+        max-width: 100%;
+        display: inline-flex;
+        text-align: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        @media (max-width: 1024px) {
+          margin: 0 auto -24px;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          margin: 0 auto -20px;
+        }
+
+        .nav-item {
+          display: block;
+          flex: 0 0 auto;
+          max-width: 100%;
+
+          .nav-link {
+            display: block;
+            padding: 0 16px 8px;
+            @include geometria-normal-700;
+            @include fs-16-lh-16;
+            color: $deepBlue;
+            border-bottom: 2px solid $black-10;
+            transition: all 0.3s ease;
+
+            @media (max-width: $media-breakpoints-lg) {
+              padding: 0 16px 10px 20px;
+            }
+
+            &.active,
+            &.active:focus {
+              color: $gold;
+              border-bottom-color: $gold;
+            }
+
+            @media (pointer: coarse) {
+              &:active {
+                color: $paleGold;
+                border-bottom: 2px solid $paleGold;
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover,
+              &:focus {
+                color: $paleGold;
+                border-bottom: 2px solid $paleGold;
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 32px;
+
+    @media (max-width: $media-breakpoints-lg) {
+      margin-top: 24px;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      margin: 16px -15px 0;
+    }
+
+    .row {
+      margin: 0;
+
+      .tab__name {
+        padding: 20px 24px;
+        @include flex-flex-start-center;
+        max-width: 100%;
+        min-height: 128px;
+        height: 100%;
+        @include geometria-normal-700;
+        @include fs-16-lh-16;
+        text-transform: uppercase;
+        color: $deepBlue;
+        border: 1px solid #E5E5E5;
+        background-color: $white;
+        word-break: break-all;
+
+        @media (max-width: $media-breakpoints-lg) {
+          padding: 20px;
+          min-height: 125px;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          padding: 20px 20px;
+          min-height: 82px;
+          @include fs-14-lh-14;
+        }
+      }
+
+      .col-6,
+      .col-md-4,
+      .col-lg-6,
+      .col-xl-4 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

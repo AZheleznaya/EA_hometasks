@@ -1,0 +1,89 @@
+@import "_bootstrap/reboot";
+@import "_bootstrap/grid";
+@import "_bootstrap/modal";
+@import "_bootstrap/carousel";
+
+@import "base/common.scss";
+@import "base/fonts";
+@import "base/variables";
+@import "base/mixins";
+
+@import "sections/header";
+@import "sections/hero";
+@import "sections/commitment";
+@import "sections/services";
+@import "sections/surgeons";
+@import "sections/lorem";
+@import "sections/faq";
+@import "sections/gallery-grid";
+
+body {
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  background: $paleGrey;
+
+  @media (max-width: $media-breakpoints-xxl) {
+    flex-direction: column;
+  }
+
+  .content-main {
+    position: relative;
+    @include flex-row;
+    @include min-height;
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: $media-breakpoints-xxl) {
+      flex-direction: column;
+    }
+
+    .main {
+      width: 100%;
+    }
+  }
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.fade {
+  transition: opacity 0.15s linear;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.fade:not(.show) {
+  opacity: 0;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+
+.collapse.show {
+  display: block;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+
+
