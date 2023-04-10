@@ -1,0 +1,40 @@
+@import "mixins.scss";
+
+*:focus {
+  outline-style: none;
+  outline-width: 0 !important;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+p + p {
+  padding-top: 30px;
+}
+
+.text-content {
+  @include geometria-normal-400;
+  @include fs-18-lh-25;
+
+  @media (max-width: $media-breakpoints-lg) {
+    @include fs-16-lh-22;
+  }
+}

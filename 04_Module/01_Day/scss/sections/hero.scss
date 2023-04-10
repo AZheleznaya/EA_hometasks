@@ -1,0 +1,120 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.section__hero {
+  position: relative;
+  @include flex-center;
+  max-height: 1040px;
+  min-height: 580px;
+  @include height-100vh;
+  width: 100%;
+  background: url("./assets/images/hero.png") center / cover no-repeat;
+  overflow: hidden;
+
+  @media (max-width: $media-breakpoints-lg) {
+    margin-left: 0;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    max-width: 1036px;
+    background: linear-gradient(90deg, $deepBlue 0%, $deepBlue-00 100%);
+  }
+
+  .hero__content {
+    margin: auto;
+    padding: 100px 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @media (max-width: $media-breakpoints-lg) {
+      margin-left: 40px;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      margin-left: 20px;
+    }
+
+    .container {
+      position: relative;
+      padding-left: 24px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+      border-left: 2px solid $gold;
+      z-index: 2;
+
+      .hero__content-title {
+        max-width: 880px;
+        @include geometria-normal-400;
+        @include fs-80-lh-80;
+        color: $white;
+        text-transform: uppercase;
+
+        @media (max-width: $media-breakpoints-lg) {
+          max-width: 500px;
+          @include fs-44-lh-44;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          max-width: 300px;
+          @include fs-32-lh-32;
+        }
+      }
+
+      .hero__content-text {
+        padding: 16px 0 40px;
+        @include geometria-normal-400;
+        @include fs-18-lh-18;
+        color: $white-80;
+
+        @media (max-width: $media-breakpoints-lg) {
+          padding: 16px 0 32px;
+          @include fs-16-lh-16;
+        }
+
+        @media (max-width: $media-breakpoints-md) {
+          padding: 12px 0 40px;
+        }
+      }
+
+      .hero__content-subtitle {
+        padding-bottom: 16px;
+        @include geometria-normal-700;
+        @include fs-16-lh-19;
+        color: $white;
+        text-transform: uppercase;
+      }
+
+      .hero__content-button {
+        @include gold-button-desktop;
+
+        @media (max-width: $media-breakpoints-md) {
+          @include gold-button-mobile;
+        }
+
+        @media (pointer: coarse) {
+          &:active {
+            @include pointer-coarse-active-button;
+          }
+        }
+
+        @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+          &:hover {
+            @include not-pointer-coarse-hover-button;
+          }
+
+          &:focus {
+            @include not-pointer-coarse-focus-button;
+          }
+        }
+      }
+    }
+  }
+}

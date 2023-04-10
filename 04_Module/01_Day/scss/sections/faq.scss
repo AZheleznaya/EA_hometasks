@@ -1,0 +1,319 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.section__faq {
+  padding: 0 0 80px;
+
+  .faq__title {
+    position: relative;
+    margin: 0 auto;
+    padding: 25px 0 50px;
+    @include geometria-normal-400;
+    @include fs-50-lh-50;
+    @include center-uppercase;
+    color: $deepBlue;
+
+    @media (max-width: $media-breakpoints-xl) {
+      padding: 8px 0 50px;
+      @include fs-44-lh-44;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      padding: 8px 0 24px;
+      @include fs-32-lh-32;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 105px;
+      height: 2px;
+      top: 0;
+      right: calc(50% - 105px / 2);
+      background: $gold;
+
+      @media (max-width: $media-breakpoints-xl) {
+        width: 98px;
+        right: calc(50% - 98px / 2);
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        width: 68px;
+        right: calc(50% - 68px / 2);
+      }
+    }
+  }
+
+  .faq-tabs {
+    display: block;
+
+    @media (max-width: $media-breakpoints-xl) {
+      display: none;
+    }
+
+    .row {
+      margin-right: -8px;
+      margin-left: -8px;
+
+      .col-12,
+      .col-xl-6 {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .faq-tabs__list {
+        padding: 0;
+        margin-bottom: 0;
+
+        .faq-tabs__point {
+          background: $white;
+
+          &:not(:last-child) {
+            margin-bottom: 4px;
+          }
+
+          .point-link {
+            position: relative;
+            display: block;
+            padding: 30px 16px 30px 20px;
+            @include geometria-normal-400;
+            @include fs-20-lh-24;
+            color: $deepBlue;
+            border: 1px solid $lightGrey;
+            z-index: 1;
+            transition: all 0.5s ease;
+
+            &::before,
+            &.active::before {
+              position: absolute;
+              content: "";
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 100%;
+              z-index: -1;
+              transition: all 0.5s ease;
+            }
+
+            &::before {
+              background: $paleGold;
+            }
+
+            &.active::before {
+              background: $gold;
+            }
+
+            @media (pointer: coarse) {
+              &:active::before,
+              &.active:active::before {
+                right: 0;
+                transition: all 0.1s ease;
+              }
+
+              &.active:active {
+                color: $white;
+                transition: all 0.1s ease;
+              }
+            }
+
+            @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+              &:hover::before,
+              &:focus::before,
+              &.active:hover::before,
+              &.active:focus::before {
+                right: 0;
+                transition: all 0.5s ease;
+              }
+
+              &.active:hover,
+              &.active:focus {
+                color: $white;
+                transition: all 0.5s ease;
+              }
+            }
+
+            &::after,
+            &.active::after {
+              position: absolute;
+              content: "";
+              top: -1px;
+              right: -1px;
+              width: 4px;
+              height: calc(100% + 2px);
+            }
+
+            &::after {
+              background: $paleGold;
+            }
+
+            &.active::after {
+              background: $gold;
+            }
+          }
+        }
+      }
+
+      .tab-content {
+        height: 100%;
+
+        .tab-pane {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .faq-collapse {
+    display: none;
+
+    @media (max-width: $media-breakpoints-xl) {
+      display: block;
+    }
+
+    &__item {
+      margin-bottom: 4px;
+
+      .collapse-link {
+        display: block;
+        position: relative;
+        padding: 30px 24px 30px 20px;
+        @include geometria-normal-400;
+        @include fs-20-lh-24;
+        color: $deepBlue;
+        background: $white;
+        border: 1px solid $lightGrey;
+        z-index: 1;
+        transition: all 0.5s ease;
+
+        @media (max-width: $media-breakpoints-md) {
+          padding: 22px 20px;
+          @include fs-16-lh-19;
+        }
+
+        &::before,
+        &.collapsed::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 100%;
+          z-index: -1;
+          transition: all 0.5s ease;
+        }
+
+        &::before {
+          background: $gold;
+        }
+
+        &.collapsed::before {
+          background: $paleGold;
+        }
+
+        @media (pointer: coarse) {
+          &:active::before,
+          &.collapsed:active::before {
+            right: 0;
+            transition: all 0.1s ease;
+          }
+
+          &:not(.collapsed):active {
+            color: $white;
+            transition: all 0.1s ease;
+          }
+        }
+
+        @media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+          &:hover::before,
+          &:focus::before,
+          &.collapsed:hover::before,
+          &.collapsed:focus::before {
+            right: 0;
+            transition: all 0.5s ease;
+          }
+
+          &:not(.collapsed):hover,
+          &:not(.collapsed):focus {
+            color: $white;
+            transition: all 0.5s ease;
+          }
+        }
+
+        &::after,
+        &.collapsed::after {
+          position: absolute;
+          content: "";
+          top: -1px;
+          right: -1px;
+          width: 4px;
+          height: calc(100% + 2px);
+        }
+
+        &::after {
+          background: $gold;
+        }
+
+        &.collapsed::after {
+          background: $paleGold;
+        }
+      }
+    }
+  }
+
+  .faq-content {
+    padding: 56px 56px 0;
+    height: 100%;
+    background: $gold;
+
+    @media (max-width: $media-breakpoints-xl) {
+      padding: 32px;
+      margin-top: 4px;
+      height: 100%;
+    }
+
+    @media (max-width: $media-breakpoints-md) {
+      padding: 24px;
+    }
+
+    &__question {
+      @include geometria-normal-500;
+      @include fs-16-lh-19;
+      color: $white-40;
+
+      @media (max-width: $media-breakpoints-lg) {
+        @include fs-14-lh-14;
+      }
+    }
+
+    &__answer {
+      padding-top: 20px;
+      @include geometria-normal-400;
+      @include fs-18-lh-25;
+      color: $white-80;
+
+      @media (max-width: $media-breakpoints-lg) {
+        @include fs-16-lh-22;
+      }
+
+      @media (max-width: $media-breakpoints-md) {
+        padding-top: 18px;
+        @include fs-14-lh-20;
+      }
+
+      .answer-text {
+        display: inline-block;
+      }
+
+      .answer-list {
+        display: inline-block;
+        padding-top: 20px;
+        margin-bottom: 0;
+        list-style-type: disc;
+
+        @media (max-width: $media-breakpoints-md) {
+          padding-top: 16px;
+        }
+      }
+    }
+  }
+}
