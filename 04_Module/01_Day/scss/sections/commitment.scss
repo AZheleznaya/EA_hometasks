@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "../base/mixins";
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .section__commitment {
   padding-top: 105px;
@@ -107,6 +107,7 @@
       &__description {
         max-height: 200px;
         width: 100%;
+        margin-right: -10px;
         padding-right: 10px;
         color: $white-80;
 

@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "../base/mixins";
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .section__faq {
   padding: 0 0 80px;
@@ -261,7 +261,7 @@
   }
 
   .faq-content {
-    padding: 56px 56px 0;
+    padding: 56px 56px;
     height: 100%;
     background: $gold;
 
@@ -286,33 +286,26 @@
     }
 
     &__answer {
-      padding-top: 20px;
+      max-height: 300px;
+      height: 100%;
+      margin-top: 20px;
+      margin-right: -10px;
+      padding-right: 10px;
       @include geometria-normal-400;
       @include fs-18-lh-25;
       color: $white-80;
+
+      @media (max-width: $media-breakpoints-xl) {
+        max-height: 200px;
+      }
 
       @media (max-width: $media-breakpoints-lg) {
         @include fs-16-lh-22;
       }
 
       @media (max-width: $media-breakpoints-md) {
-        padding-top: 18px;
+        margin-top: 18px;
         @include fs-14-lh-20;
-      }
-
-      .answer-text {
-        display: inline-block;
-      }
-
-      .answer-list {
-        display: inline-block;
-        padding-top: 20px;
-        margin-bottom: 0;
-        list-style-type: disc;
-
-        @media (max-width: $media-breakpoints-md) {
-          padding-top: 16px;
-        }
       }
     }
   }

@@ -34,15 +34,14 @@ window.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    Array.prototype.forEach.call(
-        document.querySelectorAll('.card__description'),
-        (el) => new SimpleBar(el, { autoHide: false })
-    );
+    const scrollContainer = document.querySelector(".nav-tabs");
 
-    Array.prototype.forEach.call(
-        document.querySelectorAll('.article__description'),
-        (el) => new SimpleBar(el, { autoHide: false })
-    );
+    if(scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+        scrollContainer.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY;
+        })
+    };
 
     const surgeonCards = document.querySelectorAll(".surgeon__image");
 
@@ -53,8 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     Array.prototype.forEach.call(
-        document.querySelectorAll('.surgeon-overlay__text'),
+        document.querySelectorAll('.simple-scroll'),
         (el) => new SimpleBar(el, { autoHide: false })
     );
-
 });

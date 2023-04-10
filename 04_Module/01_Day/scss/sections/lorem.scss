@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "../base/mixins";
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .section__lorem {
   padding: 72px 0 136px;
@@ -77,13 +77,8 @@
     }
 
     .paragraph__description {
-      @include geometria-normal-400;
-      @include fs-18-lh-25;
       color: $deeplBlue-60;
-
-      @media (max-width: $media-breakpoints-xl) {
-        @include fs-16-lh-22;
-      }
+      padding-bottom: 30px;
 
       .very-long-link {
         color: #C9AB63;
@@ -111,15 +106,14 @@
     }
 
     .paragraph__button {
-      margin-top: 44px;
+      margin-top: 14px;
       @include gold-button-desktop;
 
       @media (max-width: $media-breakpoints-xl) {
-        margin-top: 32px;
+        margin-top: 2px;
       }
 
       @media (max-width: $media-breakpoints-md) {
-        margin-top: 24px;
         @include gold-button-mobile;
       }
 

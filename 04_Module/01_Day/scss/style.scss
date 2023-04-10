@@ -1,21 +1,21 @@
-@import "_bootstrap/reboot";
-@import "_bootstrap/grid";
-@import "_bootstrap/modal";
-@import "_bootstrap/carousel";
+@import "_bootstrap/reboot.scss";
+@import "_bootstrap/grid.scss";
+@import "_bootstrap/modal.scss";
+@import "_bootstrap/carousel.scss";
 
 @import "base/common.scss";
-@import "base/fonts";
-@import "base/variables";
-@import "base/mixins";
+@import "base/fonts.scss";
+@import "base/variables.scss";
+@import "base/mixins.scss";
 
-@import "sections/header";
-@import "sections/hero";
-@import "sections/commitment";
-@import "sections/services";
-@import "sections/surgeons";
-@import "sections/lorem";
-@import "sections/faq";
-@import "sections/gallery-grid";
+@import "sections/header.scss";
+@import "sections/hero.scss";
+@import "sections/commitment.scss";
+@import "sections/services.scss";
+@import "sections/surgeons.scss";
+@import "sections/lorem.scss";
+@import "sections/faq.scss";
+@import "sections/gallery-grid.scss";
 
 body {
   width: 100%;
