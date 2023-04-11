@@ -1,0 +1,233 @@
+@mixin max-height {
+  max-height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin min-height {
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin height-100vh {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin width-100vw {
+  width: calc(var(--vw, 1vw) * 100);
+}
+
+@mixin geometria-normal-700 {
+  font-family: 'Geometria', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin geometria-normal-500 {
+  font-family: 'Geometria', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin geometria-normal-400 {
+  font-family: 'Geometria', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin fs-80-lh-80 {
+  font-size: 80px;
+  line-height: 80px;
+}
+
+@mixin fs-50-lh-50 {
+  font-size: 50px;
+  line-height: 50px;
+}
+
+@mixin fs-44-lh-44 {
+  font-size: 44px;
+  line-height: 44px;
+}
+
+@mixin fs-32-lh-32 {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+@mixin fs-24-lh-24 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+@mixin fs-20-lh-24 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin fs-20-lh-20 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+@mixin fs-18-lh-25 {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@mixin fs-18-lh-18 {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+@mixin fs-16-lh-22 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin fs-16-lh-19 {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin fs-16-lh-16 {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+@mixin fs-14-lh-20 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin fs-14-lh-14 {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+@mixin center-uppercase {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column-space-between-flex-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin gold-button-desktop {
+  display: block;
+  padding: 24px 28px 20px;
+  @include geometria-normal-700;
+  @include fs-16-lh-16;
+  @include center-uppercase;
+  color: $white;
+  background: $gold;
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 50px transparent;
+  transition: all 0.5s ease;
+}
+
+@mixin gold-button-mobile {
+  padding: 16px 28px 12px;
+  @include fs-14-lh-14;
+}
+
+@mixin pointer-coarse-active-button {
+  color: $gold;
+  background: $white;
+  border: 2px solid $gold;
+  box-shadow: inset 0 0 0 50px $white;
+  transition: all 0.1s ease;
+}
+
+@mixin not-pointer-coarse-hover-button {
+  background: $white;
+  color: $gold;
+  border: 2px solid $gold;
+  box-shadow: inset 0 0 0 50px $white;
+  transition: all 0.5s ease;
+}
+
+@mixin not-pointer-coarse-focus-button {
+  background: $paleGold;
+  transition: all 0.5s ease;
+}
+
+@mixin clearfix {
+	content: "";
+	line-height: 0;
+	display: table;
+	clear: both;
+}
+
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+
+	@media (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+
+	@if $max == 767px {
+		@media (max-width: $max),
+			screen and (max-width: $responsive-ios) and (orientation: landscape) {
+			@content;
+		}
+	} @else {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+}
+
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+	$min: breakpoint-min($lower, $breakpoints);
+	$max: breakpoint-max($upper, $breakpoints);
+
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
