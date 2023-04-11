@@ -12,27 +12,59 @@ a:active {
   text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
-}
-
-button {
-  outline: none;
-  border: none;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-p + p {
-  padding-top: 30px;
-}
-
 .text-content {
   @include geometria-normal-400;
   @include fs-18-lh-25;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  button {
+    outline: none;
+    border: none;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  p + p {
+    padding-top: 30px;
+  }
+
+  ul,
+  ol {
+    color: inherit;
+    font-size: inherit;
+
+    li:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  q,
+  blockquote,
+  dfn,
+  i {
+    font-style: italic;
+  }
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 
   @media (max-width: $media-breakpoints-lg) {
     @include fs-16-lh-22;
