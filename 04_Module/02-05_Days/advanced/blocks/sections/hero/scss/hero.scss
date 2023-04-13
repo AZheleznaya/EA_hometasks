@@ -1,0 +1,368 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+//@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section Hero
+\* ------------------------------------------------------------ */
+
+.section__hero {
+  position: relative;
+  @include flex-center;
+  max-height: 1040px;
+  min-height: 580px;
+  @include height-100vh;
+  width: 100%;
+  overflow: hidden;
+
+  .admin-bar & {
+	height: calc((var(--vh, 1vh) * 100) - 32px);
+
+	@include breakpoint-down(admin-bar) {
+	  height: calc((var(--vh, 1vh) * 100) - 46px);
+	}
+  }
+
+  &::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: -1px;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	max-width: 1036px;
+	background: linear-gradient(90deg, $deepBlue 0%, $deepBlue-00 100%);
+  }
+
+  .hero__content {
+	margin: auto;
+	padding: 0 100px;
+	flex: 0 0 100%;
+	max-width: 100%;
+
+	@media (max-width: $media-breakpoints-lg) {
+	  margin-left: 40px;
+	  padding: 0;
+	}
+
+	@media (max-width: $media-breakpoints-md) {
+	  margin-left: 20px;
+	}
+
+	.container {
+	  position: relative;
+	  padding-left: 24px;
+	  margin-right: auto;
+	  margin-left: auto;
+	  width: 100%;
+	  border-left: 2px solid $gold;
+	  z-index: 2;
+
+	  .hero__content-title {
+		max-width: 880px;
+		@include geometria-normal-400;
+		@include fs-80-lh-80;
+		color: $white;
+		text-transform: uppercase;
+
+		@media (max-width: $media-breakpoints-lg) {
+		  max-width: 500px;
+		  @include fs-44-lh-44;
+		}
+
+		@media (max-width: $media-breakpoints-md) {
+		  max-width: 300px;
+		  @include fs-32-lh-32;
+		}
+	  }
+
+	  .hero__content-text {
+		padding: 16px 0 40px;
+		@include geometria-normal-400;
+		@include fs-18-lh-18;
+		color: $white-80;
+
+		@media (max-width: $media-breakpoints-lg) {
+		  padding: 16px 0 32px;
+		  @include fs-16-lh-16;
+		}
+
+		@media (max-width: $media-breakpoints-md) {
+		  padding: 12px 0 40px;
+		}
+	  }
+
+	  .hero__content-subtitle {
+		padding-bottom: 16px;
+		@include geometria-normal-700;
+		@include fs-16-lh-19;
+		color: $white;
+		text-transform: uppercase;
+	  }
+
+	  .hero__content-button {
+		@include gold-button-desktop;
+
+		@media (max-width: $media-breakpoints-md) {
+		  @include gold-button-mobile;
+		}
+
+		@media (pointer: coarse) {
+		  &:active {
+			@include pointer-coarse-active-button;
+		  }
+		}
+
+		@media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+		  &:hover {
+			@include not-pointer-coarse-hover-button;
+		  }
+
+		  &:focus {
+			@include not-pointer-coarse-focus-button;
+		  }
+		}
+	  }
+	}
+  }
+
+  .modal {
+	background: rgba(15, 15, 40, 0.8);
+
+	.modal-dialog {
+	  margin: 0 auto;
+	  max-width: 760px;
+	  width: 100%;
+	  height: 100%;
+
+	  @media(max-width: $media-breakpoints-lg) {
+		max-width: 684px;
+	  }
+
+	  @media (max-width: $media-breakpoints-md - 1px) {
+		padding: 0 20px;
+		min-width: 320px;
+	  }
+
+	  .modal-content {
+		padding: 32px 32px 80px 76px;
+		background: #FFFFFF;
+		backdrop-filter: blur(25px);
+
+		@media(max-width: $media-breakpoints-lg) {
+		  padding-right: 18px;
+		  padding-bottom: 60px;
+		  padding-left: 56px;
+		}
+
+		@media (max-width: $media-breakpoints-md - 1px) {
+		  padding: 20px 16px 72px 36px;
+		}
+
+		.modal-header {
+		  margin-bottom: 16px;
+		  max-height: 32px;
+		  background: inherit;
+
+		  @media(max-width: $media-breakpoints-lg) {
+			margin-bottom: 0;
+		  }
+
+		  @media (max-width: $media-breakpoints-md - 1px) {
+			margin-bottom: 20px;
+		  }
+
+		  .modal-close {
+			width: 32px;
+			height: 32px;
+			background: inherit;
+			border: 2px solid $gold;
+			transition: all 0.5s ease;
+			cursor: pointer;
+
+			@media(max-width: $media-breakpoints-lg) {
+			  margin-right: 14px;
+			}
+
+			@media (max-width: $media-breakpoints-md - 1px) {
+			  margin-right: 4px;
+			}
+
+			@media(pointer: coarse) {
+			  &:active {
+				transform: scale(0.9);
+				transition: all 0.1s ease;
+			  }
+			}
+
+			@media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+			  &:hover,
+			  &:focus {
+				transform: scale(0.9);
+				transition: all 0.5s ease;
+			  }
+			}
+		  }
+		}
+
+		.modal-body {
+		  position: relative;
+		  padding-right: 42px;
+
+		  @media(max-width: $media-breakpoints-lg) {
+			padding-right: 0;
+		  }
+
+
+		  &::before {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: -20px;
+			height: 100%;
+			width: 2px;
+			background: $gold;
+
+			@media (max-width: $media-breakpoints-md - 1px) {
+			  left: -16px;
+			}
+		  }
+
+		  .nf-form-title {
+			@include geometria-normal-400;
+			@include fs-50-lh-50;
+			color: $deepBlue;
+			text-transform: uppercase;
+
+			@media(max-width: $media-breakpoints-lg) {
+			  font-size: 42px;
+			  line-height: 42px;
+			}
+
+			@media (max-width: $media-breakpoints-md - 1px) {
+			  font-size: 28px;
+			  line-height: 28px;
+			}
+		  }
+
+		  .nf-form-layout {
+			.nf-form-content {
+
+			  .nf-row .nf-cell {
+				@media (max-width: $media-breakpoints-md - 1px) {
+				  width: 100% !important;
+				}
+			  }
+
+			  #nf-field-11-container {
+				margin-bottom: 0;
+			  }
+
+			  #nf-field-11-wrap > div.nf-field-element {
+				margin: 0;
+				padding: 16px 0 32px;
+				@include geometria-normal-400;
+				@include fs-18-lh-25;
+				color: rgba(15, 15, 40, 0.6);
+
+				@media(max-width: $media-breakpoints-lg) {
+				  padding: 18px 0 24px;
+				  @include fs-16-lh-22;
+				}
+
+				@media (max-width: $media-breakpoints-md - 1px) {
+				  padding: 16px 0;
+				}
+			  }
+
+			  #nf-field-8-wrap > div.nf-field-element {
+				position: relative;
+				background: #FAFAFA;
+
+				&::after {
+				  position: absolute;
+				  content: "";
+				  width: 16px;
+				  height: 16px;
+				  top: 19px;
+				  right: 19px;
+				  background-repeat: no-repeat;
+				  background-size: 16px 16px;
+				  background-image: url(../../../../images/myImages/selector-arrow.svg);
+
+				  @media (max-width: $media-breakpoints-md - 1px) {
+					top: 15px;
+					right: 15px;
+				  }
+				}
+			  }
+
+			  div.nf-field-element > select {
+				position: relative;
+				z-index: 2;
+				@include geometria-normal-400;
+				@include fs-18-lh-18;
+				background: transparent !important;
+				color: rgba(15, 15, 40, 0.4);
+				appearance: none;
+
+				option:first-child {
+				  color: rgba(15, 15, 40, 0.4);
+				}
+
+				@media (max-width: $media-breakpoints-md - 1px) {
+				  @include fs-16-lh-16;
+				}
+			  }
+
+			  #nf-field-10 {
+				margin-top: 16px;
+				padding: 26px 0 22px;
+				max-width: 193px;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				@include geometria-normal-700;
+				@include fs-16-lh-16;
+				@include center-uppercase;
+				color: #FFFFFF;
+				background: #C9AB63;
+				transition: all 0.5s ease;
+				cursor: pointer;
+
+				@media (max-width: $media-breakpoints-md - 1px) {
+				  margin-top: 8px;
+				  padding: 18px 0 14px;
+				  max-width: 181px;
+				  @include fs-14-lh-14;
+				}
+
+				@media(pointer: coarse) {
+				  &:active {
+					transform: scale(0.9);
+					transition: all 0.1s ease;
+				  }
+				}
+
+				@media (not (pointer: coarse)), (hover: hover) and (pointer: fine) {
+				  &:hover,
+				  &:focus {
+					transform: scale(0.9);
+					transition: all 0.5s ease;
+				  }
+				}
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+}
