@@ -24,7 +24,7 @@ $button = get_field( 'hero_button' );
 $buttonLink = get_field('hero_button_link');
 ?>
 
-<section class="section__hero">
+<section id="home" class="section__hero">
 	<div class="background-img">
 		<img src="<?= get_field( 'hero_background' ); ?>" alt="hero">
 	</div>

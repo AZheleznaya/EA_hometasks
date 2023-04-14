@@ -17,7 +17,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 }
 ?>
 
-<section class="section__gallery">
+<section id="gallery" class="section__gallery">
 	<div class="container">
 		<div class="gallery-title">
 			<h1>

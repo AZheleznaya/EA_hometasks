@@ -26,6 +26,33 @@ const init = function( section ) {
 			document.body.classList.remove("scroll-off");
 		})
 	}
+
+	const anchors = document.querySelectorAll('a[href*="#"]')
+
+	for (let anchor of anchors) {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault()
+
+			const blockID = anchor.getAttribute('href').substr(1)
+
+			document.getElementById(blockID).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			})
+		})
+	}
+
+	document.querySelectorAll('.menu-item').forEach((currentItem,index,items)=>{
+		currentItem.addEventListener('click',()=>{
+			items.forEach((item)=> item.classList.remove('active'));
+			currentItem.classList.add('active');
+		})
+	})
+
+	const menuLinks = document.querySelectorAll(".menuItem");
+	menuLinks.addEventListener("click", function() {
+		this.classList.toggle("active");
+	});
 }
 
 initScript( '.header', 'header', init )

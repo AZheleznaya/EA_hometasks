@@ -24,7 +24,7 @@ $button = get_field( 'lorem_button' );
 $buttonLink = get_field('lorem_button_link');
 ?>
 
-<section class="section__lorem">
+<section id="lorem" class="section__lorem">
 	<div class="container">
 		<div class="lorem">
 			<div class="row">

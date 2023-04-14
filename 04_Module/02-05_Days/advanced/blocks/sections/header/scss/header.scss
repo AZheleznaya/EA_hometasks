@@ -103,16 +103,25 @@
 		.header-menu {
 		  margin: auto 0;
 
+		  //.menu-item .current-menu-item > a {
+			//color: $gold;
+		  //}
+
 		  .menu {
+			display: block;
 			margin-top: 0;
 			margin-bottom: 0;
 			padding: 0;
 
-			&__item {
+			&-item {
 			  padding-top: 8px;
 			  padding-bottom: 8px;
 
-			  &-link {
+			  &.active > a {
+				color: $gold;
+			  }
+
+			  a {
 				padding-left: 56px;
 				padding-right: 38px;
 				@include geometria-normal-500;

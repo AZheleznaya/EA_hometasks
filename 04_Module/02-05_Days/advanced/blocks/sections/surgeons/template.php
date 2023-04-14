@@ -21,7 +21,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	if( have_rows('surgeons') ):
 ?>
 
-<section class="section__surgeons">
+<section id="our-surgeons" class="section__surgeons">
 	<div class="container">
 		<div class="surgeons">
 			<div class="surgeons__subtitle">

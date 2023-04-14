@@ -24,7 +24,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 <?php
 			if( have_rows('commitment_cards') ):
 ?>
-<section class="section__commitment">
+<section id="commitment" class="section__commitment">
 	<div class="container">
 		<div class="commitment-title">
 			<h1>

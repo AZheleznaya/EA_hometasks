@@ -25,38 +25,14 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<img class="header-logo__image" src="<?= get_theme_file_uri( '/dist/images/myImages/a-logo.svg' )?>" alt="logo">
 				</a>
 				<div class="header-menu">
-					<ul class="menu">
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Home</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">About Us</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Locations</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">I’m New</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Procedures</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Before and After</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Testimonials</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Resources</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Financing</a>
-						</li>
-						<li class="menu__item">
-							<a class="menu__item-link" href="javascript:void(0);">Contact Us</a>
-						</li>
-					</ul>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => $location,
+							'container'      => false,
+							'menu_id'        => $location,
+							'walker'         => new HMT_Walker_Nav_Menu()
+						) );
+					?>
 				</div>
 				<div class="header-button">
 					<a class="header-button__phone" href="tel:+4047375803" role="button">(404) 737-5803</a>
