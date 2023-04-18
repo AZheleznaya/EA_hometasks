@@ -1,0 +1,84 @@
+.projects-header {
+  margin: 0 auto;
+  padding: 50px 0 30px 0;
+  max-width: 1160px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media(max-width: 1280px) {
+    max-width: 940px;
+  }
+
+  @media(max-width: 992px) {
+    max-width: 460px;
+  }
+
+  @media(max-width: 576px) {
+    padding-top: 30px;
+    max-width: 340px;
+  }
+
+  &__left {
+    .left-title {
+      font-size: 18px;
+      font-weight: 300;
+      color: @dark-grey-50;
+
+      @media(max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__right {
+    .add-project {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: @dark-grey;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover,
+      &:focus {
+        color: @orange;
+        transition: all 0.5s ease;
+      }
+
+      &:active {
+        color: @orange;
+        transition: all 0.1s ease;
+      }
+
+      &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        background-color: @orange;
+        border-radius: 50%;
+
+        img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      &__text {
+        font-family: 'Futura PT Book', sans-serif;
+        font-size: 18px;
+        line-height: 18px;
+
+        @media(max-width: 576px) {
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

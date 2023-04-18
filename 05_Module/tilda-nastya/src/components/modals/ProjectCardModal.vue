@@ -1,0 +1,38 @@
+<template>
+  <div class="overlay" v-if="modalOpen" @click.stop="hideModal()" />
+  <div class="moreModal" v-if="modalOpen">
+      <h4 class="moreModal-title">Настройки сайта</h4>
+      <ul class="moreModal-list list-unstyled">
+        <li class="moreModal-list__item">
+          <button class="item-button">Переименовать</button>
+        </li>
+        <li class="moreModal-list__item">
+          <button @click="removeProject" class="item-button">Удалить</button>
+        </li>
+      </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ProjectCardModal',
+  props: {
+    indexProject: Number,
+    modalOpen: {
+      type: Boolean,
+      default: false
+    },
+    removeCurrentProject: {
+      type: Function
+    }
+  },
+  methods: {
+    hideModal() {
+      this.$emit('update:modalOpen', false)
+    },
+    removeProject() {
+      this.removeCurrentProject(this.indexProject)
+    }
+  },
+}
+</script>

@@ -1,0 +1,175 @@
+.project-item {
+  position: relative;
+  max-width: 558px;
+  width: 100%;
+  height: 256px;
+  border: 1px solid @grey;
+  background: @white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  @media(max-width: 1280px) {
+    max-width: 460px;
+  }
+
+  @media(max-width: 576px) {
+    max-width: 340px;
+  }
+
+  &__content {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+
+    @media(max-width: 576px) {
+      padding: 30px;
+    }
+
+    .content-header {
+      &__title {
+        font-weight: 300;
+        font-size: 52px;
+        line-height: 54px;
+        color: @black;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        @media(max-width: 1280px) {
+          font-size: 34px;
+          line-height: 36px;
+        }
+
+        @media(max-width: 576px) {
+          font-size: 28px;
+          line-height: 30px;
+        }
+
+        &:hover,
+        &:focus {
+          color: @orange;
+          transition: all 0.5s ease;
+        }
+
+        &:active {
+          color: @orange;
+          transition: all 0.1s ease;
+        }
+      }
+    }
+
+    .content-footer {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: -30px;
+        left: 50%;
+        width: 100%;
+        height: 1px;
+        transform: translateX(-50%);
+        background: @grey;
+      }
+
+      &__edit,
+      &__visit {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        color: @black;
+        border: none;
+        outline: none;
+        background: inherit;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        &:hover,
+        &:focus {
+          color: @orange;
+          transition: all 0.5s ease;
+        }
+
+        &:active {
+          color: @orange;
+          transition: all 0.1s ease;
+        }
+
+        .icon {
+          width: 14px;
+          height: 14px;
+          color: @icon-orange;
+        }
+
+        .text {
+          font-family: 'Futura PT', sans-serif;
+          font-weight: 500;
+          font-size: 13px;
+          text-transform: uppercase;
+
+          @media(max-width: 576px) {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    .project-item__more {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: none;
+      outline: none;
+      background: inherit;
+      color: @dark-grey;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover,
+      &:focus {
+        color: @orange;
+        transition: all 0.5s ease;
+      }
+
+      &:active {
+        color: @orange;
+        transition: all 0.1s ease;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background: @light-grey;
+    transition: all 0.5s ease;
+
+    .content-header__title {
+      color: @orange;
+    }
+
+    .project-item__more {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    background: @light-grey;
+    transition: all 0.1s ease;
+
+    .content-header__title {
+      color: @orange;
+    }
+
+    .project-item__more {
+      opacity: 1;
+    }
+  }
+}
