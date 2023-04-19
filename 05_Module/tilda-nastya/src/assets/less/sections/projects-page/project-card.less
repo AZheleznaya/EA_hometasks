@@ -47,15 +47,9 @@
           line-height: 30px;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
           color: @orange;
           transition: all 0.5s ease;
-        }
-
-        &:active {
-          color: @orange;
-          transition: all 0.1s ease;
         }
       }
     }
@@ -85,21 +79,12 @@
         align-items: center;
         gap: 5px;
         color: @black;
-        border: none;
-        outline: none;
         background: inherit;
-        cursor: pointer;
         transition: all 0.5s ease;
 
-        &:hover,
-        &:focus {
+        &:hover {
           color: @orange;
           transition: all 0.5s ease;
-        }
-
-        &:active {
-          color: @orange;
-          transition: all 0.1s ease;
         }
 
         .icon {
@@ -125,44 +110,21 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      border: none;
-      outline: none;
       background: inherit;
       color: @dark-grey;
       opacity: 0;
-      cursor: pointer;
       transition: all 0.5s ease;
 
-      &:hover,
-      &:focus {
+      &:hover {
         color: @orange;
         transition: all 0.5s ease;
       }
-
-      &:active {
-        color: @orange;
-        transition: all 0.1s ease;
-      }
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background: @light-grey;
     transition: all 0.5s ease;
-
-    .content-header__title {
-      color: @orange;
-    }
-
-    .project-item__more {
-      opacity: 1;
-    }
-  }
-
-  &:active {
-    background: @light-grey;
-    transition: all 0.1s ease;
 
     .content-header__title {
       color: @orange;

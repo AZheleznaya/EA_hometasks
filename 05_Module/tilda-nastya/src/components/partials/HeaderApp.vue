@@ -1,25 +1,28 @@
 <template>
   <header class="header">
     <div class="header-wrapper">
-      <div class="header-waves">
+      <router-link to="/" class="header-waves">
         <svg class="waves-icon" width="14" height="14" role="img">
           <use href="#waves" />
         </svg>
-      </div>
-      <div class="header-logo">
+      </router-link>
+      <router-link to="/" class="header-logo">
         <img class="logo-icon" src="@/assets/images/svg/tilda-logo.svg" alt="logo">
-      </div>
+      </router-link>
       <div class="header-items">
-        <div class="header__items-left">
+        <div class="header-items__left">
           <nav class="header-nav">
             <ul class="nav-list">
-              <li class="nav-list__item nav-list__item_active">
-                <a href="javascript:void(0);" class="nav-list__link">Мои сайты</a>
+              <li class="nav-list__item active">
+                <router-link to="/" class="nav-list__link">Мои сайты</router-link>
+              </li>
+              <li class="nav-list__item">
+                <a href="javascript:void(0);" class="nav-list__link">Профиль</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="header__items-right">
+        <div class="header-items__right">
           <nav class="header-nav">
             <ul class="nav-list">
               <li class="nav-list__item">

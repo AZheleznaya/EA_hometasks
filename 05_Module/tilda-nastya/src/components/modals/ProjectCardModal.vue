@@ -1,6 +1,6 @@
 <template>
-  <div class="overlay" v-if="modalOpen" @click.stop="hideModal()" />
-  <div class="moreModal" v-if="modalOpen">
+  <div v-if="modalOpen" @click.stop="hideModal()" class="overlay" />
+  <div @click.stop v-if="modalOpen" class="moreModal">
       <h4 class="moreModal-title">Настройки сайта</h4>
       <ul class="moreModal-list list-unstyled">
         <li class="moreModal-list__item">

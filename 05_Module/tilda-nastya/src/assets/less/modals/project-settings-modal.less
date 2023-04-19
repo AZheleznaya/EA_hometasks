@@ -1,0 +1,123 @@
+.settings-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: linear-gradient(to top right,rgba(227,101,87,.8),rgba(238,174,117,.9));
+}
+
+.settings-content {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform:translateX(-50%);
+  max-width: 720px;
+  width: 100%;
+  background: @white;
+  z-index: 11;
+
+  @media(max-width: 768px) {
+    max-width: 550px;
+  }
+
+  @media(max-width: 576px) {
+    max-width: 350px;
+  }
+
+  &__head {
+    padding: 40px 40px 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e5e5e5;
+
+    @media(max-width: 576px) {
+      padding: 20px 20px 0;
+    }
+
+    .head-content__top {
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media(max-width: 576px) {
+        margin-bottom: 35px;
+      }
+
+      .settings-title {
+        font-family: 'Futura PT Book', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: @black;
+      }
+
+      .settings-button {
+        position: relative;
+        width: 19px;
+        height: 19px;
+        background: inherit;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.2);
+          transition: all 0.5s ease;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          right: 0;
+          bottom: 50%;
+          height: 1px;
+          width: 100%;
+          background: @dark-grey;
+          transform: rotate(-45deg);
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          right: 0;
+          bottom: 50%;
+          height: 1px;
+          width: 100%;
+          background: @dark-grey;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .head-content__tabs {
+      display: flex;
+      justify-content: center;
+
+      .tabs-item {
+        padding-bottom: 20px;
+        font-family: 'Futura PT', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: @dark-grey;
+        background: inherit;
+
+        @media(max-width: 576px) {
+          padding-bottom: 10px;
+          font-size: 16px;
+        }
+
+        & + .tabs-item {
+          margin-left: 40px;
+
+          @media(max-width: 576px) {
+            margin-left: 20px;
+          }
+        }
+
+        &:hover {
+          color: @orange;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+  }
+}

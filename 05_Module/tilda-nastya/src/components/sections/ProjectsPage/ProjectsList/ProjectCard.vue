@@ -1,11 +1,11 @@
 <template>
-  <li class="project-item">
+  <li class="project-item" @click="$router.push(`/project/${project.id}`)">
     <div class="project-item__content">
       <a href="javascript:void(0);" class="content-header">
         <h2 class="content-header__title">{{ project.title + " " + project.id }}</h2>
       </a>
       <div class="content-footer">
-        <button class="content-footer__edit">
+        <button @click.stop class="content-footer__edit">
           <svg
               class="icon"
               width="24"
@@ -16,7 +16,10 @@
           </svg>
           <span class="text">Редактировать сайт</span>
         </button>
-        <button class="content-footer__visit">
+        <button
+            @click="$router.push(`/project/${project.id}`)"
+            class="content-footer__visit"
+        >
           <svg
               class="icon"
               width="14"
@@ -28,7 +31,7 @@
           <span class="text">Открыть сайт</span>
         </button>
       </div>
-      <button @click="showModal" class="project-item__more">
+      <button @click.stop @click="showModal" class="project-item__more">
         <svg
             id="more-card-options"
             class="icon"
