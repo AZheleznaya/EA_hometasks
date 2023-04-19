@@ -8,6 +8,7 @@
 import HeaderApp from "@/components/partials/HeaderApp.vue";
 import ProjectsHeader from "@/components/sections/ProjectsPage/ProjectsHeader.vue";
 import ProjectsList from "@/components/sections/ProjectsPage/ProjectsList.vue";
+import resolveNewItemId from "@/helpers/resolveNewItemId.js";
 
 export default {
   name: 'ProjectsPage',
@@ -25,31 +26,8 @@ export default {
   },
   methods: {
     addNewProject() {
-      if (!this.addMissingProject()) {
-        this.allProjects.push({id: this.allProjects.length + 1, title: 'My project'})
-      }
-    },
-    addMissingProject() {
-      let sortedIds = this.allProjects.map(p => p.id).sort((a, b) => a - b);
-
-      if (sortedIds.length === 0) {
-        return false;
-      }
-
-      if (sortedIds[0] !== 1) {
-        this.allProjects.push({id: 1, title: 'My project'});
-        return true;
-      }
-
-      for (let index = 0; index < sortedIds.length - 1; index++) {
-        let current = sortedIds[index];
-        let next = sortedIds[index + 1];
-        if (next - current > 1) {
-          this.allProjects.push({id: current + 1, title: 'My project'})
-          return true;
-        }
-      }
-      return false;
+      let newItemId = resolveNewItemId(this.allProjects);
+      this.allProjects.push({id: newItemId, title: 'My project'})
     },
     removeProject(index) {
       this.allProjects.splice(index - 1, 1)
