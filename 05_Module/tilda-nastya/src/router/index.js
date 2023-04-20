@@ -1,21 +1,31 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 
 const routes = [
-  {
-    path: '/',
-    name: 'ProjectsPage',
-    component: () => import('@/views/ProjectsPage.vue'),
-  },
-  {
-    path: '/project/:projectId',
-    name: 'ProjectPages',
-    component: () => import('@/views/ProjectPagesPage.vue'),
-  }
+    {
+        path: '/',
+        name: 'ProjectsPage',
+        component: () => import('@/views/ProjectsPage.vue'),
+    },
+    {
+        path: '/project/:projectId',
+        name: 'ProjectItems',
+        component: () => import('@/views/ProjectItemsPage.vue'),
+    },
+    {
+        path: '/project/:projectId/edit/:pageId',
+        name: 'EditPage',
+        component: () => import('@/views/EditPage.vue'),
+    },
+    {
+        path: '/project/:projectId/preview/:pageId',
+        name: 'PreviewPage',
+        component: () => import('@/views/PreviewPage.vue'),
+    }
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+    history: createWebHistory(process.env.BASE_URL),
+    routes
 });
 
 export default router;
