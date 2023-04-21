@@ -2,7 +2,7 @@
     <transition-group name="modal">
         <div
             v-if="modalMenuOpen"
-            @click.stop="hideMenuModal()"
+            @click.stop="hideMenuModal"
             class="menu-overlay"
         />
         <div v-if="modalMenuOpen" @click.stop class="menu-content">
@@ -25,7 +25,7 @@
                         <use href="#search-icon" />
                     </svg>
                 </button>
-                <button @click.stop="hideMenuModal()" class="button-close"></button>
+                <button @click.stop="hideMenuModal" class="button-close" />
             </div>
             <div class="menu-content__tabs">
                 <button

@@ -45,7 +45,7 @@
             <project-card-menu
                 v-model:modal-open="modalVisible"
                 :index-project="indexProject"
-                @remove-project="removeProject(indexProject)"
+                @remove-project="removeProject"
             />
         </div>
     </li>
@@ -56,6 +56,7 @@ import ProjectCardMenu from "./ProjectCard/ProjectCardMenu.vue";
 
 export default {
     name: 'ProjectCard',
+    emits: ['remove-project'],
     components: {
         ProjectCardMenu
     },

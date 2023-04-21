@@ -105,6 +105,32 @@
                 d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
             />
         </symbol>
+        <symbol
+            id="duplicate-icon"
+            viewBox="-632 702.1 14.2 14.2"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+        >
+            <path d="M-622.2 710.8h1.8v-6.5h-5.8v1.9h-1.5v-3.4h8.8v9.5h-3.2l-.1-1.5z" />
+            <path d="M-625.7 706.1h3.6v9.5h-8.8v-9.5h5.2zm-3.7 8h5.8v-6.5h-5.8v6.5z" />
+        </symbol>
+        <symbol
+            id="move-up-icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            style="fill:currentColor"
+        >
+            <path d="M6 4h12v2H6zm.707 11.707L11 11.414V20h2v-8.586l4.293 4.293 1.414-1.414L12 7.586l-6.707 6.707z" />
+        </symbol>
+        <symbol
+            id="move-down-icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            style="fill:currentColor"
+        >
+            <path d="M6 18h12v2H6zm5-14v8.586L6.707 8.293 5.293 9.707 12 16.414l6.707-6.707-1.414-1.414L13 12.586V4z" />
+        </symbol>
     </svg>
 </template>
 

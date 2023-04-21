@@ -1,8 +1,8 @@
 <template>
     <li class="page">
         <router-link :to="`/project/${$route.params.projectId}/edit/${page.id}`" class="page-left">
-            <img :src="page.img" class="page-left__image" alt="image">
-            <span class="page-left__title">{{ page.title + " " + page.id }}</span>
+            <img :src="itemImage" class="page-left__image" alt="image">
+            <span class="page-left__title">{{ itemName }}</span>
         </router-link>
         <div class="page-right">
             <button @click="showModal" class="page-right__settings">
@@ -17,7 +17,7 @@
                 </svg>
                 <span class="text">Настройки</span>
             </button>
-            <button @click="removePage(indexPage)" class="page-right__trash">
+            <button @click="removePage" class="page-right__trash">
                 <svg
                     class="icon"
                     width="14"
@@ -30,7 +30,12 @@
                 <span class="text">Удалить</span>
             </button>
         </div>
-        <project-settings-modal v-model:modal-settings-open="modalVisible"/>
+        <project-settings-modal
+            v-model:modal-settings-open="modalVisible"
+            :page="page"
+            @change-title="changeTitle"
+            @save-image="saveActiveImage"
+        />
     </li>
 </template>
 
@@ -39,6 +44,7 @@ import ProjectSettingsModal from "@/components/modals/ProjectSettingsModal.vue";
 
 export default {
     name: 'ProjectItem',
+    emits: ['change-title', 'save-image'],
     components: {
         ProjectSettingsModal
     },
@@ -50,15 +56,23 @@ export default {
     },
     data() {
         return {
-            modalVisible: false
+            modalVisible: false,
+            itemName: this.page.title + " " + this.page.id,
+            itemImage: this.page.img,
         }
     },
     methods: {
-        removePage(index) {
-            this.$emit('remove-page', index)
+        removePage() {
+            this.$emit('remove-page', this.indexPage)
         },
         showModal() {
             this.modalVisible = true
+        },
+        changeTitle(title) {
+            this.itemName = title;
+        },
+        saveActiveImage(image) {
+            this.itemImage = image;
         }
     }
 }

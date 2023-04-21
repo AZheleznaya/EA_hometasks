@@ -1,0 +1,39 @@
+.edit-menu__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}
+.edit-menu__modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 60px;
+    right: 35px;
+    padding: 20px;
+    height: auto;
+    background: @white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    z-index: 10;
+
+    .modal-item {
+        font-family: 'Futura PT Book', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: @black;
+        background: inherit;
+        transition: all 0.5s ease;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        &:hover {
+            color: @orange;
+            transition: all 0.5s ease;
+        }
+    }
+}

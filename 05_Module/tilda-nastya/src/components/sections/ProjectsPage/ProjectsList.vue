@@ -5,7 +5,7 @@
             :index-project="index + 1"
             :key="project.id"
             :project="project"
-            @remove-project="removeProject(indexProject)"
+            @remove-project="removeProject"
         />
         <li class="projects__empty"/>
     </ul>
@@ -17,11 +17,11 @@ import ProjectCard from "./ProjectsList/ProjectCard.vue";
 
 export default {
     name: 'ProjectList',
+    emits: ['remove-project'],
     components: {
         ProjectCard
     },
     props: {
-        indexProject: Number,
         projects: {
             type: Array,
         }

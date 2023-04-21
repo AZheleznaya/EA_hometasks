@@ -1,5 +1,5 @@
 <template>
-    <div v-if="modalOpen" @click.stop="hideModal()" class="overlay"/>
+    <div v-if="modalOpen" @click.stop="hideModal" class="overlay"/>
     <div @click.stop v-if="modalOpen" class="moreModal">
         <h4 class="moreModal-title">Настройки сайта</h4>
         <ul class="moreModal-list list-unstyled">
@@ -7,7 +7,7 @@
                 <button class="item-button">Переименовать</button>
             </li>
             <li class="moreModal-list__item">
-                <button @click="removeProject(indexProject)" class="item-button">Удалить</button>
+                <button @click="removeProject" class="item-button">Удалить</button>
             </li>
         </ul>
     </div>
@@ -16,6 +16,7 @@
 <script>
 export default {
     name: 'ProjectCardMenu',
+    emits: ['remove-project'],
     props: {
         indexProject: Number,
         modalOpen: {
@@ -27,8 +28,8 @@ export default {
         hideModal() {
             this.$emit('update:modalOpen', false)
         },
-        removeProject(index) {
-            this.$emit('remove-project', index)
+        removeProject() {
+            this.$emit('remove-project', this.indexProject)
         }
     },
 }

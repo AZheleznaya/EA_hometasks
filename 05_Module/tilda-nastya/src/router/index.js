@@ -7,6 +7,11 @@ const routes = [
         component: () => import('@/views/ProjectsPage.vue'),
     },
     {
+        path: '/profile',
+        name: 'ProfilePage',
+        component: () => import('@/views/ProfilePage.vue'),
+    },
+    {
         path: '/project/:projectId',
         name: 'ProjectItems',
         component: () => import('@/views/ProjectItemsPage.vue'),

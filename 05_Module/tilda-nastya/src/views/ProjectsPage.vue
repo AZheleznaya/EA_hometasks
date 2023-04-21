@@ -1,6 +1,6 @@
 <template>
     <header-main />
-    <projects-header :add-project="addNewProject"/>
+    <projects-header @add-project="addNewProject" />
     <projects-list :projects="allProjects" @remove-project="removeProject"/>
 </template>
 
@@ -12,6 +12,7 @@ import resolveNewItemId from "@/helpers/resolveNewItemId.js";
 
 export default {
     name: 'ProjectsPage',
+    emits: ['remove-project'],
     components: {
         HeaderMain, ProjectsHeader, ProjectsList
     },
