@@ -1,6 +1,6 @@
 <template>
     <header-main />
-    <project-items-panel :add-page="addNewPage"/>
+    <project-items-panel @add-page="addNewPage"/>
     <project-items-list :pages="allPages" @remove-page="removePage"/>
 </template>
 
@@ -30,7 +30,7 @@ export default {
         },
         removePage(index) {
             this.allPages.splice(index - 1, 1)
-        }
+        },
     }
 }
 </script>

@@ -47,7 +47,7 @@
                             <li class="list-item">
                                 <a href="javascript:void(0);" class="list-item__link">Предпросмотр</a>
                             </li>
-                            <li class="list-item">
+                            <li class="list-item" @click="showModal">
                                 <a href="javascript:void(0);" class="list-item__link">Ещё</a>
                                 <svg
                                     class="more-icon"
@@ -64,11 +64,27 @@
                 </div>
             </div>
         </div>
+        <edit-header-menu v-model:modal-edit-open="modalVisible" />
     </header>
 </template>
 
 <script>
+import EditHeaderMenu from "@/components/sections/EditPage/EditHeaderMenu.vue";
+
 export default {
-    name: 'HeaderEdit'
+    name: 'HeaderEdit',
+    components: {
+        EditHeaderMenu
+    },
+    data() {
+        return {
+            modalVisible: false
+        }
+    },
+    methods: {
+        showModal() {
+            this.modalVisible = true;
+        }
+    }
 }
 </script>

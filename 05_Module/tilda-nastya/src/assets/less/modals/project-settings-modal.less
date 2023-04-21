@@ -13,7 +13,7 @@
 }
 
 .settings-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -50,14 +50,10 @@
         }
 
         .head-content__top {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            @media (max-width: 576px) {
-                margin-bottom: 35px;
-            }
 
             .settings-title {
                 font-family: 'Futura PT Book', sans-serif;
@@ -107,16 +103,18 @@
             justify-content: center;
 
             .tabs-item {
-                padding-bottom: 20px;
+                padding-bottom: 15px;
                 font-family: 'Futura PT', sans-serif;
-                font-size: 18px;
+                font-size: 22px;
                 font-weight: 300;
                 color: @dark-grey;
                 background: inherit;
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
 
                 @media (max-width: 576px) {
                     padding-bottom: 10px;
-                    font-size: 16px;
+                    font-size: 18px;
                 }
 
                 & + .tabs-item {
@@ -131,7 +129,21 @@
                     color: @orange;
                     transition: all 0.5s ease;
                 }
+
+                &.active {
+                    border-bottom: 2px solid @orange;
+                    transition: all 0.3s ease;
+                }
             }
+        }
+
+    }
+
+    &__body {
+        padding: 40px 40px 0;
+
+        @media (max-width: 576px) {
+            padding: 20px 20px 0;
         }
     }
 }

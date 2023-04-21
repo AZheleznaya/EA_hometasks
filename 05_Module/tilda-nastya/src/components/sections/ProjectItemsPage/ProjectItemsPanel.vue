@@ -45,11 +45,6 @@ export default {
     components: {
         ProjectDomainModal
     },
-    props: {
-        addPage: {
-            type: Function
-        }
-    },
     data() {
         return {
             modalVisible: false
@@ -57,7 +52,7 @@ export default {
     },
     methods: {
         addNewPage() {
-            this.addPage()
+            this.$emit('addPage')
         },
         showModal() {
             this.modalVisible = true;

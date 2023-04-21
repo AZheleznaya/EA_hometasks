@@ -7,7 +7,7 @@
                 :index-page="index + 1"
                 :key="page.id"
                 :page="page"
-                @remove-page="removeProject(indexPage)"
+                @remove-page="removeProject"
             />
         </ul>
         <h3 v-else class="pages-empty">Добавьте первую страницу.</h3>

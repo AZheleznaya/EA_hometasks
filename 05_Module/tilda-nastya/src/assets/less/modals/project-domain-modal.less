@@ -13,7 +13,7 @@
 }
 
 .domain-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -97,9 +97,23 @@
 
     .modal-domain__body {
         padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
 
         @media (max-width: 576px) {
             padding: 20px;
+        }
+
+        .error-domain {
+            font-family: 'Futura PT Book', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 10px;
+            color: red;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .body-label {
